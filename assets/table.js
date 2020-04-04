@@ -1,5 +1,5 @@
 table = {};
-
+// hello
 table.hash_data = 'job base_lv job_lv adopted str agi vit int dex luk equip_head1_refine equip_head1 equip_head1_card1 equip_head2 equip_head2_card1 equip_head3 equip_right_refine equip_right equip_right_card1 equip_right_card2 equip_right_card3 equip_right_card4 equip_right_smith equip_left_dual_refine equip_left_dual equip_left_dual_card1 equip_left_dual_card2 equip_left_dual_card3 equip_left_dual_card4 equip_left_dual_smith equip_left_refine equip_left equip_left_card1 equip_body_refine equip_body equip_body_card1 equip_robe_refine equip_robe equip_robe_card1 equip_shoes_refine equip_shoes equip_shoes_card1 equip_accessory1 equip_accessory1_card1 equip_accessory2 equip_accessory2_card1 equip_costume_head1 equip_ammunition equip_element equip_pet'.split(' ');
 
 table.job_bonus = {
