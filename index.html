@@ -1,0 +1,2695 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:url" content="http://ro.usee.my">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ragnarok Status Simulator">
+  <meta property="og:description" content="Ragnarok Online">
+  <meta property="og:image" content="http://ro.usee.my/images/prtwiki-share.png">
+  <meta property="og:image:width" content="600">
+  <meta property="og:image:height" content="315">
+  <meta property="fb:app_id" content="1788409814520978">
+  <link rel="canonical" href="http://ro.usee.my/">
+  <title>Ragnarok Status Simulator</title>
+  <meta name="description" content="Ragnarok Online">
+  <link rel="stylesheet" href="./assets/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/fa-brands.min.css">
+  <link rel="stylesheet" href="./assets/fontawesome.min.css">
+  <link rel="stylesheet" href="./assets/app.css">
+  <script async="" src="./assets/analytics.js.download"></script>
+  <script async="" src="./assets/analytics.js(1).download"></script>
+  <script src="./assets/jquery.min.js.download"></script>
+  <script src="./assets/bootstrap.min.js.download"></script>
+  <script src="./assets/array_intersect.min.js.download"></script>
+  <script src="./assets/clipboard.min.js.download"></script>
+  <script src="./assets/base64.js.download"></script>
+  <script src="./assets/polyfill.js.download"></script>
+  <script src="./assets/define.js.download"></script>
+  <script src="./assets/table.js.download"></script>
+  <script src="./assets/app.js.download"></script>
+  <style type="text/css" data-asas-style="">
+    body,
+    div,
+    a,
+    p,
+    span {
+      user-select: text !important;
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      cursor: auto;
+      user-select: text !important;
+    }
+
+    ::selection {
+      background-color: #338FFF !important;
+      color: #fff !important;
+    }
+  </style>
+  <style type="text/css" data-asas-style="">
+    body,
+    div,
+    a,
+    p,
+    span {
+      user-select: text !important;
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      cursor: auto;
+      user-select: text !important;
+    }
+
+    ::selection {
+      background-color: #338FFF !important;
+      color: #fff !important;
+    }
+  </style>
+</head>
+
+<body cz-shortcut-listen="true">
+  <div class="container-fluid">
+    <h1>
+      Status Simulator
+      <button id="clipboard_btn" class="btn btn-primary btn-xs" style="" data-toggle="tooltip" data-title="Copied!"
+        data-trigger="manual" data-placement="bottom" data-original-title="" title="">
+        <i class="glyphicon glyphicon-link"></i>
+        Copy to clipboard
+      </button>
+    </h1>
+
+    <div class="row">
+      <div class="column">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="https://stat.prtwiki.in.th/#character" data-toggle="tab">Character</a></li>
+        </ul>
+        <br>
+        <div class="tab-content">
+          <div class="tab-pane active" id="character">
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <label>Class</label>
+                    <select class="form-control js" id="job">
+                      <option value="nv">Novice</option>
+                      <optgroup label="Class 1">
+                        <option value="sm">Swordman</option>
+                        <option value="tf">Thief</option>
+                        <option value="ac">Archer</option>
+                        <option value="mg">Mage</option>
+                        <option value="al">Acolyte</option>
+                        <option value="mc">Merchant</option>
+                      </optgroup>
+                      <optgroup label="Extended Class 1">
+                        <option value="sn">Super Novice</option>
+                        <option value="tk">Taekwon Boy/Girl</option>
+                        <option value="gs">Gunslinger</option>
+                        <option value="nj">Ninja</option>
+                      </optgroup>
+                      <optgroup label="Class 2-1">
+                        <option value="kn">Knight</option>
+                        <option value="as">Assassin</option>
+                        <option value="ht">Hunter</option>
+                        <option value="wz">Wizard</option>
+                        <option value="pr">Priest</option>
+                        <option value="bs">Blacksmith</option>
+                      </optgroup>
+                      <optgroup label="Class 2-2">
+                        <option value="cr">Crusader</option>
+                        <option value="rg">Rogue</option>
+                        <option value="ba">Bard</option>
+                        <option value="dc">Dancer</option>
+                        <option value="sa">Sage</option>
+                        <option value="mo">Monk</option>
+                        <option value="am">Alchemist</option>
+                      </optgroup>
+                      <optgroup label="Extended Class 2">
+                        <option value="sg">Taekwon Master</option>
+                        <option value="sl">Soul Linker</option>
+                      </optgroup>
+                      <optgroup label="Hi Class 2-1">
+                        <option value="hkn">Lord Knight</option>
+                        <option value="has">Assassin Cross</option>
+                        <option value="hht">Sniper</option>
+                        <option value="hwz">High Wizard</option>
+                        <option value="hpr">High Priest</option>
+                        <option value="hbs">Master Smith</option>
+                      </optgroup>
+                      <optgroup label="Hi Class 2-2">
+                        <option value="hcr">Paladin</option>
+                        <option value="hrg">Stalker</option>
+                        <option value="hba">Clown</option>
+                        <option value="hdc">Gypsy</option>
+                        <option value="hsa">Scholar</option>
+                        <option value="hmo">Champion</option>
+                        <option value="ham">Biochemist</option>
+                      </optgroup>
+                    </select>
+                  </td>
+                  <td>
+                    <label>Lv</label>
+                    <input type="number" class="form-control js" id="base_lv" min="1" max="99" value="99">
+                  </td>
+                  <td>
+                    <label>Job</label>
+                    <input type="number" class="form-control js" id="job_lv" min="1" max="10" value="10">
+                  </td>
+                  <td>
+                    <div class="adopted">
+                      <label><input type="checkbox" class="js" id="adopted"> Adopted</label>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table class="status">
+              <tbody>
+                <tr>
+                  <td>
+                    <label>Str<span class="point-consumption"> (<span class="js"
+                          id="str_point_consumption">2</span>)</span></label>
+                    <input type="number" class="form-control js" id="str" min="1" max="99" value="1">
+                    +<span class="js" id="bonus_str">0</span>
+
+                  </td>
+                  <td>
+                    <label>Agi<span class="point-consumption"> (<span class="js"
+                          id="agi_point_consumption">2</span>)</span></label>
+                    <input type="number" class="form-control js" id="agi" min="1" max="99" value="1">
+                    +<span class="js" id="bonus_agi">0</span>
+                  </td>
+                  <td>
+                    <label>Vit<span class="point-consumption"> (<span class="js"
+                          id="vit_point_consumption">2</span>)</span></label>
+                    <input type="number" class="form-control js" id="vit" min="1" max="99" value="1">
+                    +<span class="js" id="bonus_vit">0</span>
+                  </td>
+                  <td>
+                    <label>Int<span class="point-consumption"> (<span class="js"
+                          id="int_point_consumption">2</span>)</span></label>
+                    <input type="number" class="form-control js" id="int" min="1" max="99" value="1">
+                    +<span class="js" id="bonus_int">0</span>
+                  </td>
+                  <td>
+                    <label>Dex<span class="point-consumption"> (<span class="js"
+                          id="dex_point_consumption">2</span>)</span></label>
+                    <input type="number" class="form-control js" id="dex" min="1" max="99" value="1">
+                    +<span class="js" id="bonus_dex">0</span>
+                  </td>
+                  <td>
+                    <label>Luk<span class="point-consumption"> (<span class="js"
+                          id="luk_point_consumption">2</span>)</span></label>
+                    <input type="number" class="form-control js" id="luk" min="1" max="99" value="1">
+                    +<span class="js" id="bonus_luk">0</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="information">
+              <tbody>
+                <tr>
+                  <td>Status Point</td>
+                  <td class="js" id="status_point">1273</td>
+                </tr>
+                <tr>
+                  <td>Hp</td>
+                  <td class="js" id="hp">535</td>
+                </tr>
+                <tr>
+                  <td>Sp</td>
+                  <td class="js" id="sp">110</td>
+                </tr>
+                <tr>
+                  <td>Hp Recovery</td>
+                  <td class="js" id="hp_recovery">2</td>
+                </tr>
+                <tr>
+                  <td>Sp Recovery</td>
+                  <td class="js" id="sp_recovery">2</td>
+                </tr>
+                <tr>
+                  <td>Weight Limit</td>
+                  <td class="js" id="weight">2030</td>
+                </tr>
+                <tr>
+                  <td>Physical Attack<br><a data-toggle=".physical-atk-addon" class="toggle"
+                      href="https://stat.prtwiki.in.th/#">(Toggle information)</a></td>
+                  <td>
+                    <span class="js" id="soft_atk">26</span> +
+                    <span class="js" id="hard_atk">0</span><br>
+                    (<span class="js" id="min_atk">52</span> ~ <span class="js" id="max_atk">52</span>)
+                  </td>
+                </tr>
+                <tr class="physical-atk-addon" style="">
+                  <td>Status Attack</td>
+                  <td class="js" id="status_atk">52</td>
+                </tr>
+                <tr class="physical-atk-addon" style="">
+                  <td>Mastery Attack</td>
+                  <td class="js" id="mastery_atk">0</td>
+                </tr>
+                <tr class="physical-atk-addon" style="">
+                  <td>Weapon Attack</td>
+                  <td><span class="js" id="base_weapon_atk">0</span> ± <span class="js"
+                      id="weapon_atk_variance">0</span></td>
+                </tr>
+                <tr class="physical-atk-addon" style="">
+                  <td>Status Bonus</td>
+                  <td class="js" id="weapon_stat_bonus">0</td>
+                </tr>
+                <tr class="physical-atk-addon" style="">
+                  <td>Refinement Bonus</td>
+                  <td><span class="js" id="weapon_refine_bonus">0</span> ~ <span class="js"
+                      id="max_weapon_refine_bonus">0</span></td>
+                </tr>
+                <tr class="physical-atk-addon" style="">
+                  <td>Size Modifier</td>
+                  <td><span class="js" id="weapon_size_penalty">100</span>%</td>
+                </tr>
+                <tr class="physical-atk-addon" style="">
+                  <td>Equipment Attack</td>
+                  <td class="js" id="bonus_atk">0</td>
+                </tr>
+                <tr class="physical-atk-addon" style="">
+                  <td>Element Modifier</td>
+                  <td><span class="js" id="weapon_element_modifier">100</span>%</td>
+                </tr>
+                <tr class="physical-atk-addon" style="">
+                  <td>Other Modifier</td>
+                  <td><span class="js" id="weapon_modifier">100</span>%</td>
+                </tr>
+                <tr>
+                  <td>Magic Attack</td>
+                  <td>
+                    <span class="js" id="soft_matk">25</span> +
+                    <span class="js" id="hard_matk">0</span><br>
+                    (<span class="js" id="min_matk">25</span> ~ <span class="js" id="max_matk">25</span>)
+                  </td>
+                </tr>
+                <tr>
+                  <td>Physical Defense</td>
+                  <td>
+                    <span class="js" id="soft_def">50</span> +
+                    <span class="js" id="hard_def">0</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Magic Defense</td>
+                  <td>
+                    <span class="js" id="soft_mdef">26</span> +
+                    <span class="js" id="hard_mdef">0</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span data-toggle="tooltip" title=""
+                      data-original-title="The ASPD is NOT 100% correct. Please avoid ASPD at .00">Attack Speed*</span>
+                    <span class="question-mark">[<a
+                        href="https://docs.google.com/spreadsheets/d/1DdH1LEQ919beI_qjEZ3UAZZI2A9WEhI63-pcpPu6drI/edit?usp=sharing"
+                        target="_blank">?</a>]</span></td>
+                  <td class="js" id="aspd">156.56</td>
+                </tr>
+                <tr>
+                  <td>Hit</td>
+                  <td class="js" id="hit">275</td>
+                </tr>
+                <tr>
+                  <td>Flee</td>
+                  <td class="js" id="flee">200</td>
+                </tr>
+                <tr>
+                  <td>Perfect Dodge</td>
+                  <td class="js" id="perfect_dodge">1</td>
+                </tr>
+                <tr>
+                  <td>Critical</td>
+                  <td class="js" id="critical">1</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="https://stat.prtwiki.in.th/#skill" data-toggle="tab">Skills</a></li>
+          <li><a href="https://stat.prtwiki.in.th/#equipment" data-toggle="tab">Equipments</a></li>
+          <li><a href="https://stat.prtwiki.in.th/#item" data-toggle="tab">Items</a></li>
+          <li><a href="https://stat.prtwiki.in.th/#extra" data-toggle="tab">Extras</a></li>
+        </ul>
+        <br>
+        <div class="tab-content">
+          <div class="tab-pane active" id="skill">
+            <h4>Self skills</h4>
+            <div id="self_skill"></div>
+            <br>
+            <h4>Misc skills</h4>
+            <div id="misc_skill">
+              <div class="form-line"><select class="misc-skill lv-picker form-control js" id="all_inccarry">
+                  <option>10</option>
+                  <option>9</option>
+                  <option>8</option>
+                  <option>7</option>
+                  <option>6</option>
+                  <option>5</option>
+                  <option>4</option>
+                  <option>3</option>
+                  <option>2</option>
+                  <option>1</option>
+                  <option selected="">0</option>
+                </select> Enlarge Weight Limit</div>
+            </div>
+            <br>
+            <h4>Buff skills</h4>
+            <div id="buff_skill">
+              <div class="form-line"><select class="buff-skill lv-picker form-control js" id="al_incagi">
+                  <option>10</option>
+                  <option>9</option>
+                  <option>8</option>
+                  <option>7</option>
+                  <option>6</option>
+                  <option>5</option>
+                  <option>4</option>
+                  <option>3</option>
+                  <option>2</option>
+                  <option>1</option>
+                  <option selected="">0</option>
+                </select> Increase AGI</div>
+              <div class="form-line"><select class="buff-skill lv-picker form-control js" id="al_blessing">
+                  <option>10</option>
+                  <option>9</option>
+                  <option>8</option>
+                  <option>7</option>
+                  <option>6</option>
+                  <option>5</option>
+                  <option>4</option>
+                  <option>3</option>
+                  <option>2</option>
+                  <option>1</option>
+                  <option selected="">0</option>
+                </select> Blessing</div>
+              <div class="form-line"><select class="buff-skill lv-picker form-control js" id="pr_impositio">
+                  <option>5</option>
+                  <option>4</option>
+                  <option>3</option>
+                  <option>2</option>
+                  <option>1</option>
+                  <option selected="">0</option>
+                </select> Impositio Manus</div>
+              <div class="form-line"><select class="buff-skill lv-picker form-control js" id="pr_gloria">
+                  <option>5</option>
+                  <option>4</option>
+                  <option>3</option>
+                  <option>2</option>
+                  <option>1</option>
+                  <option selected="">0</option>
+                </select> Gloria</div>
+              <div class="form-line"><select class="buff-skill lv-picker form-control js" id="bs_adrenaline">
+                  <option>5</option>
+                  <option>4</option>
+                  <option>3</option>
+                  <option>2</option>
+                  <option>1</option>
+                  <option selected="">0</option>
+                </select> Adrenaline Rush</div>
+              <div class="form-line"><select class="buff-skill lv-picker form-control js" id="bs_overthrust">
+                  <option>5</option>
+                  <option>4</option>
+                  <option>3</option>
+                  <option>2</option>
+                  <option>1</option>
+                  <option selected="">0</option>
+                </select> Power-Thrust</div>
+              <div class="form-line"><select class="buff-skill lv-picker form-control js" id="bs_adrenaline2">
+                  <option>1</option>
+                  <option selected="">0</option>
+                </select> Advanced Adrenaline Rush</div>
+              <div class="form-line"><select class="buff-skill lv-picker form-control js" id="bs_weaponperfect">
+                  <option>5</option>
+                  <option>4</option>
+                  <option>3</option>
+                  <option>2</option>
+                  <option>1</option>
+                  <option selected="">0</option>
+                </select> Weapon Perfection</div>
+              <div class="form-line"><select class="buff-skill lv-picker form-control js" id="sm_magnumbonus">
+                  <option>10</option>
+                  <option>9</option>
+                  <option>8</option>
+                  <option>7</option>
+                  <option>6</option>
+                  <option>5</option>
+                  <option>4</option>
+                  <option>3</option>
+                  <option>2</option>
+                  <option>1</option>
+                  <option selected="">0</option>
+                </select> Magnum Break Bonus</div>
+            </div>
+          </div>
+          <div class="tab-pane" id="equipment">
+            <table class="information">
+              <tbody>
+                <tr>
+                  <td>Detail</td>
+                  <td id="equip_detail"></td>
+                </tr>
+              </tbody>
+            </table>
+            <table>
+              <tbody>
+                <tr>
+                  <td><select class="form-control js" id="equip_head1_refine">
+                      <option value="20">+20</option>
+                      <option value="19">+19</option>
+                      <option value="18">+18</option>
+                      <option value="17">+17</option>
+                      <option value="16">+16</option>
+                      <option value="15">+15</option>
+                      <option value="14">+14</option>
+                      <option value="13">+13</option>
+                      <option value="12">+12</option>
+                      <option value="11">+11</option>
+                      <option value="10">+10</option>
+                      <option value="9">+9</option>
+                      <option value="8">+8</option>
+                      <option value="7">+7</option>
+                      <option value="6">+6</option>
+                      <option value="5">+5</option>
+                      <option value="4">+4</option>
+                      <option value="3">+3</option>
+                      <option value="2">+2</option>
+                      <option value="1">+1</option>
+                      <option value="0" selected="">+0</option>
+                    </select></td>
+                  <td><select class="form-control equipment-select js" id="equip_head1">
+                      <option value="">(Head 1)</option>
+                      <option value="5125">Angel's Kiss [1]</option>
+                      <option value="18550">Asgard Bless [1]</option>
+                      <option value="5379">Balloon Hat [1]</option>
+                      <option value="19301">Beer Cap</option>
+                      <option value="18756">Black Shiba Inu Hat [1]</option>
+                      <option value="5776">Blazing Sun</option>
+                      <option value="5065">Blue Fish</option>
+                      <option value="5506">Blue Pajamas Hat [1]</option>
+                      <option value="2214">Bunny Band</option>
+                      <option value="18523">Cloudy Rainy</option>
+                      <option value="5564">Crown Of Deceit [1]</option>
+                      <option value="5254">Deviling Hat [1]</option>
+                      <option value="19297">DJ Kitty</option>
+                      <option value="5211">Dress Hat [1]</option>
+                      <option value="5376">Flying Evil Wing [1]</option>
+                      <option value="5569">Gemini Diadem [1]</option>
+                      <option value="18930">Gorilla Model Hat [1]</option>
+                      <option value="5660">Gryphon Hat [1]</option>
+                      <option value="5319">Hello Mother Hat [1]</option>
+                      <option value="5580">Indonesia Beret</option>
+                      <option value="5396">Jasper Crest [1]</option>
+                      <option value="18520">Jaty Crown</option>
+                      <option value="5372">Koneko Hat</option>
+                      <option value="15800">Mongkut [1]</option>
+                      <option value="18713">Monkey On Fur Hat [1]</option>
+                      <option value="5210">Moving Angel's Wing</option>
+                      <option value="19221">Moving Golden Angel Wing</option>
+                      <option value="5286">Pecopeco Hariband</option>
+                      <option value="5503">Rabbit Magic Hat</option>
+                      <option value="5293">Ramen Hat</option>
+                      <option value="5801">Ribbon Of Bride</option>
+                      <option value="2280">Sakkat</option>
+                      <option value="5508">Shark Hat</option>
+                      <option value="5359">Ship Captain Hat [1]</option>
+                      <option value="5761">Sloth Hat [1]</option>
+                      <option value="5388">Snake Head Hat [1]</option>
+                      <option value="5770">Splash Hat [1]</option>
+                      <option value="5393">Valentine Hat</option>
+                      <option value="5289">Vanilmirth Hat</option>
+                      <option value="5579">Wanderer Sakkat [1]</option>
+                      <option value="5284">Water Lily Crown [1]</option>
+                      <option value="5360">Whikebain's Black Ears</option>
+                    </select></td>
+                  <td><select class="form-control js equipment-select" id="equip_head1_card1">
+                      <option value="">(Card)</option>
+                      <option value="4241">Arch Angeling Card</option>
+                      <option value="4438">Banshee Card</option>
+                      <option value="4379">Blue Acidus Card</option>
+                      <option value="4288">Carat Card</option>
+                      <option value="4517">Cendrawasih Card</option>
+                      <option value="4229">Clock Tower Manager Card</option>
+                      <option value="4296">Cramp Card</option>
+                      <option value="4169">Dark Illusion Card</option>
+                      <option value="4468">Dark Pinguicula Card</option>
+                      <option value="4330">Dark Snake Lord Card</option>
+                      <option value="4122">Deviruchi Card</option>
+                      <option value="4052">Elder Willow Card</option>
+                      <option value="4258">Evil Nymph Card</option>
+                      <option value="4161">Grand Peco Card</option>
+                      <option value="4365">High Wizard Card</option>
+                      <option value="4343">Holden Card</option>
+                      <option value="4269">Incubus Card</option>
+                      <option value="4412">Isilla Card</option>
+                      <option value="4366">Kathryne Keyron Card</option>
+                      <option value="4434">Knocker Card</option>
+                      <option value="4364">Margaretha Sorin Card</option>
+                      <option value="4206">Myst Case Card</option>
+                      <option value="4127">Nightmare Card</option>
+                      <option value="4143">Orc Hero Card</option>
+                      <option value="4311">Permeter Card</option>
+                      <option value="4185">Rideword Card</option>
+                      <option value="4358">Seyren Windsor Card</option>
+                      <option value="4039">Stainer Card</option>
+                      <option value="4411">Vanberk Card</option>
+                      <option value="4374">Vesper Card</option>
+                      <option value="4372">White Lady Card</option>
+                      <option value="4010">Willow Card</option>
+                    </select></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><select class="form-control equipment-select js" id="equip_head2">
+                      <option value="">(Head 2)</option>
+                      <option value="5786">Ancient Elven Ear</option>
+                      <option value="18786">Anemos Mask</option>
+                      <option value="5389">Angel Spirit</option>
+                      <option value="18912">Bell Pigeon [1]</option>
+                      <option value="5068">Evil Wing Ears</option>
+                      <option value="2204">Glasses [1]</option>
+                      <option value="5314">Hockey Mask</option>
+                      <option value="5326">Masquerade (15 days)</option>
+                      <option value="2239">Monocle</option>
+                      <option value="5358">Pecopeco Wing Ears</option>
+                      <option value="19216">Promo Elven Ear</option>
+                      <option value="5288">Red Glasses</option>
+                      <option value="5325">Robo Eye</option>
+                      <option value="5592">Sigrun's Wing</option>
+                      <option value="2202">Sunglasses [1]</option>
+                    </select></td>
+                  <td><select class="form-control js equipment-select" id="equip_head2_card1">
+                      <option value="">(Card)</option>
+                      <option value="4241">Arch Angeling Card</option>
+                      <option value="4438">Banshee Card</option>
+                      <option value="4379">Blue Acidus Card</option>
+                      <option value="4288">Carat Card</option>
+                      <option value="4517">Cendrawasih Card</option>
+                      <option value="4229">Clock Tower Manager Card</option>
+                      <option value="4296">Cramp Card</option>
+                      <option value="4169">Dark Illusion Card</option>
+                      <option value="4468">Dark Pinguicula Card</option>
+                      <option value="4330">Dark Snake Lord Card</option>
+                      <option value="4122">Deviruchi Card</option>
+                      <option value="4052">Elder Willow Card</option>
+                      <option value="4258">Evil Nymph Card</option>
+                      <option value="4161">Grand Peco Card</option>
+                      <option value="4365">High Wizard Card</option>
+                      <option value="4343">Holden Card</option>
+                      <option value="4269">Incubus Card</option>
+                      <option value="4412">Isilla Card</option>
+                      <option value="4366">Kathryne Keyron Card</option>
+                      <option value="4434">Knocker Card</option>
+                      <option value="4364">Margaretha Sorin Card</option>
+                      <option value="4206">Myst Case Card</option>
+                      <option value="4127">Nightmare Card</option>
+                      <option value="4143">Orc Hero Card</option>
+                      <option value="4311">Permeter Card</option>
+                      <option value="4185">Rideword Card</option>
+                      <option value="4358">Seyren Windsor Card</option>
+                      <option value="4039">Stainer Card</option>
+                      <option value="4411">Vanberk Card</option>
+                      <option value="4374">Vesper Card</option>
+                      <option value="4372">White Lady Card</option>
+                      <option value="4010">Willow Card</option>
+                    </select></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><select class="form-control equipment-select js" id="equip_head3">
+                      <option value="">(Head 3)</option>
+                      <option value="5445">Candy Cane In Mouth</option>
+                      <option value="5594">Donut In Mouth</option>
+                      <option value="19147">Drops Balloon</option>
+                      <option value="15350">Elephangel TH</option>
+                      <option value="5967">Frenzy Galapago</option>
+                      <option value="19182">Gang Scarf</option>
+                      <option value="18967">Jinring Balloon</option>
+                      <option value="18917">Lovelove Balloon</option>
+                      <option value="5878">Miracle Blue Rose</option>
+                      <option value="28502">Mob Scarf</option>
+                      <option value="5574">Pencil In Mouth</option>
+                      <option value="18858">Pink Angeling Bubble</option>
+                      <option value="5305">Pirate Dagger</option>
+                      <option value="5463">Rainbow Scarf</option>
+                      <option value="5767">Samurai Mask</option>
+                      <option value="5462">Spiked Scarf</option>
+                      <option value="19139">Survivor's Orb</option>
+                    </select></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><select class="form-control js" id="equip_right_refine">
+                      <option value="20">+20</option>
+                      <option value="19">+19</option>
+                      <option value="18">+18</option>
+                      <option value="17">+17</option>
+                      <option value="16">+16</option>
+                      <option value="15">+15</option>
+                      <option value="14">+14</option>
+                      <option value="13">+13</option>
+                      <option value="12">+12</option>
+                      <option value="11">+11</option>
+                      <option value="10">+10</option>
+                      <option value="9">+9</option>
+                      <option value="8">+8</option>
+                      <option value="7">+7</option>
+                      <option value="6">+6</option>
+                      <option value="5">+5</option>
+                      <option value="4">+4</option>
+                      <option value="3">+3</option>
+                      <option value="2">+2</option>
+                      <option value="1">+1</option>
+                      <option value="0" selected="">+0</option>
+                    </select></td>
+                  <td><select class="form-control equipment-select js" id="equip_right">
+                      <option value="">(Right Hand)</option>
+                      <optgroup label="Dagger Lv 1">
+                        <option value="1202">Knife [4]</option>
+                        <option value="1205">Cutter [4]</option>
+                        <option value="1208">Main Gauche [4]</option>
+                        <option value="13040">Novice Cutter [3]</option>
+                      </optgroup>
+                      <optgroup label="Dagger Lv 2">
+                        <option value="1211">Dirk [3]</option>
+                        <option value="1214">Dagger [3]</option>
+                        <option value="1217">Stiletto [3]</option>
+                        <option value="13050">P.Dagger1</option>
+                        <option value="13051">P.Dagger2</option>
+                      </optgroup>
+                      <optgroup label="Dagger Lv 3">
+                        <option value="13067">Caress [1]</option>
+                        <option value="1246">Cinquedea [2]</option>
+                        <option value="13036">Assassin Damascus (BB)</option>
+                        <option value="13037">Assassin Damascus (VB)</option>
+                      </optgroup>
+                      <optgroup label="Dagger Lv 4">
+                        <option value="13030">Dragon Killer [2]</option>
+                        <option value="13019">Ginnungagap [1]</option>
+                      </optgroup>
+                      <optgroup label="One-handed Sword Lv 1">
+                        <option value="1102">Sword [4]</option>
+                        <option value="1105">Falchion [4]</option>
+                        <option value="1108">Blade [4]</option>
+                      </optgroup>
+                      <optgroup label="One-handed Sword Lv 2">
+                        <option value="1111">Rapier [3]</option>
+                        <option value="1114">Scimiter [3]</option>
+                      </optgroup>
+                      <optgroup label="One-handed Sword Lv 3">
+                        <option value="1124">Orcish Sword</option>
+                        <option value="1147">Town Sword [2]</option>
+                        <option value="13410">Gladiator Blade (VB)</option>
+                        <option value="13411">Gladiator Blade (BB)</option>
+                      </optgroup>
+                      <optgroup label="One-handed Sword Lv 4">
+                        <option value="1148">Star Dust Blade [1]</option>
+                      </optgroup>
+                      <optgroup label="One-handed Axe Lv 1">
+                        <option value="1302">Axe [4]</option>
+                      </optgroup>
+                      <optgroup label="One-handed Axe Lv 3">
+                        <option value="1309">Orcish Axe [4]</option>
+                      </optgroup>
+                      <optgroup label="Mace Lv 1">
+                        <option value="1502">Club [4]</option>
+                        <option value="1505">Mace [4]</option>
+                      </optgroup>
+                      <optgroup label="Mace Lv 2">
+                        <option value="1508">Smasher [3]</option>
+                      </optgroup>
+                      <optgroup label="Mace Lv 3">
+                        <option value="1543">Battlefield Morning Star (BB)</option>
+                        <option value="1542">Battlefield Morning Star (VB)</option>
+                      </optgroup>
+                      <optgroup label="One-handed Staff Lv 1">
+                        <option value="1602">Rod [4]</option>
+                      </optgroup>
+                      <optgroup label="One-handed Staff Lv 2">
+                        <option value="1605">Wand [3]</option>
+                      </optgroup>
+                      <optgroup label="One-handed Staff Lv 3">
+                        <option value="1622">Hypnotist's Staff [2]</option>
+                      </optgroup>
+                    </select></td>
+                  <td><select class="form-control js equipment-select inline-short-select" id="equip_right_card1">
+                      <option value="">(Card)</option>
+                      <option value="4140">Abysmal Knight Card</option>
+                      <option value="4062">Anacondaq Card</option>
+                      <option value="4043">Andre Card</option>
+                      <option value="4094">Archer Skeleton Card</option>
+                      <option value="4246">Assulter Card</option>
+                      <option value="4247">Aster Card</option>
+                      <option value="4425">Atroce Card</option>
+                      <option value="4466">Beholder Master Card</option>
+                      <option value="4320">Bloody Knight Card</option>
+                      <option value="4214">Bloody Murderer Card</option>
+                      <option value="4428">Bow Guardian Card</option>
+                      <option value="4519">Butoijo Card</option>
+                      <option value="4063">Caramel Card</option>
+                      <option value="4202">Cat Official Card</option>
+                      <option value="4368">Cecil Damon Card</option>
+                      <option value="4153">Crab Card</option>
+                      <option value="4297">Cruiser Card</option>
+                      <option value="4388">Death Word Card</option>
+                      <option value="4082">Desert Wolf Card</option>
+                      <option value="4142">Doppelganger Card</option>
+                      <option value="4069">Drainliar Card</option>
+                      <option value="4004">Drops Card</option>
+                      <option value="4421">Drosera Card</option>
+                      <option value="4176">Dullahan Card</option>
+                      <option value="4118">Earth Petite Card</option>
+                      <option value="4360">Eremes Guile Card</option>
+                      <option value="4002">Fabre Card</option>
+                      <option value="4026">Female Thiefbug Card</option>
+                      <option value="4080">Flora Card</option>
+                      <option value="4312">Fur Seal Card</option>
+                      <option value="4323">Garm Bebe Card</option>
+                      <option value="4157">Goblin Archer Card</option>
+                      <option value="4060">Goblin Card</option>
+                      <option value="4155">Goblin Leader Card</option>
+                      <option value="4156">Goblin Steamrider Card</option>
+                      <option value="4163">Gryphon Card</option>
+                      <option value="4345">Hill Wind Card</option>
+                      <option value="4019">Hornet Card</option>
+                      <option value="4362">Howard Alt-Eisen Card</option>
+                      <option value="4035">Hydra Card</option>
+                      <option value="4263">Incantation Samurai Card</option>
+                      <option value="4268">Injustice Card</option>
+                      <option value="4065">Kaho Card</option>
+                      <option value="4292">Kobold Archer Card</option>
+                      <option value="4291">Kobold Leader Card</option>
+                      <option value="4394">Lady Solace Card</option>
+                      <option value="4350">Laurell Weinder Card</option>
+                      <option value="4184">Lava Golem Card</option>
+                      <option value="4006">Lunatic Card</option>
+                      <option value="4030">Mandragora Card</option>
+                      <option value="4399">Memory of Thanatos Card</option>
+                      <option value="4126">Minorous Card</option>
+                      <option value="4317">Mobster Card</option>
+                      <option value="4106">Mummy Card</option>
+                      <option value="4203">Mutant Dragonoid Card</option>
+                      <option value="4440">Necromancer Card</option>
+                      <option value="4255">Orc Lady Card</option>
+                      <option value="4085">Orc Skeleton Card</option>
+                      <option value="4310">Panzer Goblin Card</option>
+                      <option value="4007">Pecopeco Egg Card</option>
+                      <option value="4121">Phreeoni Card</option>
+                      <option value="4335">Pitman Card</option>
+                      <option value="4407">Randgris Card</option>
+                      <option value="4380">Red Ferus Card</option>
+                      <option value="4192">Rotar Zairo Card</option>
+                      <option value="4005">Santa Poring Card</option>
+                      <option value="4068">Scorpion Card</option>
+                      <option value="4130">Scorpion King Card</option>
+                      <option value="4273">Shell Fish Card</option>
+                      <option value="4117">Sidewinder Card</option>
+                      <option value="4092">Skel Worker Card</option>
+                      <option value="4086">Soldier Skeleton Card</option>
+                      <option value="4225">Stone Shooter Card</option>
+                      <option value="4318">Stormy Knight Card</option>
+                      <option value="4111">Strouf Card</option>
+                      <option value="4427">Sword Guardian Card</option>
+                      <option value="4172">The Paper Card</option>
+                      <option value="4305">Turtle General Card</option>
+                      <option value="4049">Vadon Card</option>
+                      <option value="4029">Wolf Card</option>
+                      <option value="4281">Zipper Bear Card</option>
+                    </select>
+                    <select class="form-control js equipment-select inline-short-select" id="equip_right_card2">
+                      <option value="">(Card)</option>
+                      <option value="4140">Abysmal Knight Card</option>
+                      <option value="4062">Anacondaq Card</option>
+                      <option value="4043">Andre Card</option>
+                      <option value="4094">Archer Skeleton Card</option>
+                      <option value="4246">Assulter Card</option>
+                      <option value="4247">Aster Card</option>
+                      <option value="4425">Atroce Card</option>
+                      <option value="4466">Beholder Master Card</option>
+                      <option value="4320">Bloody Knight Card</option>
+                      <option value="4214">Bloody Murderer Card</option>
+                      <option value="4428">Bow Guardian Card</option>
+                      <option value="4519">Butoijo Card</option>
+                      <option value="4063">Caramel Card</option>
+                      <option value="4202">Cat Official Card</option>
+                      <option value="4368">Cecil Damon Card</option>
+                      <option value="4153">Crab Card</option>
+                      <option value="4297">Cruiser Card</option>
+                      <option value="4388">Death Word Card</option>
+                      <option value="4082">Desert Wolf Card</option>
+                      <option value="4142">Doppelganger Card</option>
+                      <option value="4069">Drainliar Card</option>
+                      <option value="4004">Drops Card</option>
+                      <option value="4421">Drosera Card</option>
+                      <option value="4176">Dullahan Card</option>
+                      <option value="4118">Earth Petite Card</option>
+                      <option value="4360">Eremes Guile Card</option>
+                      <option value="4002">Fabre Card</option>
+                      <option value="4026">Female Thiefbug Card</option>
+                      <option value="4080">Flora Card</option>
+                      <option value="4312">Fur Seal Card</option>
+                      <option value="4323">Garm Bebe Card</option>
+                      <option value="4157">Goblin Archer Card</option>
+                      <option value="4060">Goblin Card</option>
+                      <option value="4155">Goblin Leader Card</option>
+                      <option value="4156">Goblin Steamrider Card</option>
+                      <option value="4163">Gryphon Card</option>
+                      <option value="4345">Hill Wind Card</option>
+                      <option value="4019">Hornet Card</option>
+                      <option value="4362">Howard Alt-Eisen Card</option>
+                      <option value="4035">Hydra Card</option>
+                      <option value="4263">Incantation Samurai Card</option>
+                      <option value="4268">Injustice Card</option>
+                      <option value="4065">Kaho Card</option>
+                      <option value="4292">Kobold Archer Card</option>
+                      <option value="4291">Kobold Leader Card</option>
+                      <option value="4394">Lady Solace Card</option>
+                      <option value="4350">Laurell Weinder Card</option>
+                      <option value="4184">Lava Golem Card</option>
+                      <option value="4006">Lunatic Card</option>
+                      <option value="4030">Mandragora Card</option>
+                      <option value="4399">Memory of Thanatos Card</option>
+                      <option value="4126">Minorous Card</option>
+                      <option value="4317">Mobster Card</option>
+                      <option value="4106">Mummy Card</option>
+                      <option value="4203">Mutant Dragonoid Card</option>
+                      <option value="4440">Necromancer Card</option>
+                      <option value="4255">Orc Lady Card</option>
+                      <option value="4085">Orc Skeleton Card</option>
+                      <option value="4310">Panzer Goblin Card</option>
+                      <option value="4007">Pecopeco Egg Card</option>
+                      <option value="4121">Phreeoni Card</option>
+                      <option value="4335">Pitman Card</option>
+                      <option value="4407">Randgris Card</option>
+                      <option value="4380">Red Ferus Card</option>
+                      <option value="4192">Rotar Zairo Card</option>
+                      <option value="4005">Santa Poring Card</option>
+                      <option value="4068">Scorpion Card</option>
+                      <option value="4130">Scorpion King Card</option>
+                      <option value="4273">Shell Fish Card</option>
+                      <option value="4117">Sidewinder Card</option>
+                      <option value="4092">Skel Worker Card</option>
+                      <option value="4086">Soldier Skeleton Card</option>
+                      <option value="4225">Stone Shooter Card</option>
+                      <option value="4318">Stormy Knight Card</option>
+                      <option value="4111">Strouf Card</option>
+                      <option value="4427">Sword Guardian Card</option>
+                      <option value="4172">The Paper Card</option>
+                      <option value="4305">Turtle General Card</option>
+                      <option value="4049">Vadon Card</option>
+                      <option value="4029">Wolf Card</option>
+                      <option value="4281">Zipper Bear Card</option>
+                    </select>
+                    <select class="form-control js equipment-select inline-short-select" id="equip_right_card3">
+                      <option value="">(Card)</option>
+                      <option value="4140">Abysmal Knight Card</option>
+                      <option value="4062">Anacondaq Card</option>
+                      <option value="4043">Andre Card</option>
+                      <option value="4094">Archer Skeleton Card</option>
+                      <option value="4246">Assulter Card</option>
+                      <option value="4247">Aster Card</option>
+                      <option value="4425">Atroce Card</option>
+                      <option value="4466">Beholder Master Card</option>
+                      <option value="4320">Bloody Knight Card</option>
+                      <option value="4214">Bloody Murderer Card</option>
+                      <option value="4428">Bow Guardian Card</option>
+                      <option value="4519">Butoijo Card</option>
+                      <option value="4063">Caramel Card</option>
+                      <option value="4202">Cat Official Card</option>
+                      <option value="4368">Cecil Damon Card</option>
+                      <option value="4153">Crab Card</option>
+                      <option value="4297">Cruiser Card</option>
+                      <option value="4388">Death Word Card</option>
+                      <option value="4082">Desert Wolf Card</option>
+                      <option value="4142">Doppelganger Card</option>
+                      <option value="4069">Drainliar Card</option>
+                      <option value="4004">Drops Card</option>
+                      <option value="4421">Drosera Card</option>
+                      <option value="4176">Dullahan Card</option>
+                      <option value="4118">Earth Petite Card</option>
+                      <option value="4360">Eremes Guile Card</option>
+                      <option value="4002">Fabre Card</option>
+                      <option value="4026">Female Thiefbug Card</option>
+                      <option value="4080">Flora Card</option>
+                      <option value="4312">Fur Seal Card</option>
+                      <option value="4323">Garm Bebe Card</option>
+                      <option value="4157">Goblin Archer Card</option>
+                      <option value="4060">Goblin Card</option>
+                      <option value="4155">Goblin Leader Card</option>
+                      <option value="4156">Goblin Steamrider Card</option>
+                      <option value="4163">Gryphon Card</option>
+                      <option value="4345">Hill Wind Card</option>
+                      <option value="4019">Hornet Card</option>
+                      <option value="4362">Howard Alt-Eisen Card</option>
+                      <option value="4035">Hydra Card</option>
+                      <option value="4263">Incantation Samurai Card</option>
+                      <option value="4268">Injustice Card</option>
+                      <option value="4065">Kaho Card</option>
+                      <option value="4292">Kobold Archer Card</option>
+                      <option value="4291">Kobold Leader Card</option>
+                      <option value="4394">Lady Solace Card</option>
+                      <option value="4350">Laurell Weinder Card</option>
+                      <option value="4184">Lava Golem Card</option>
+                      <option value="4006">Lunatic Card</option>
+                      <option value="4030">Mandragora Card</option>
+                      <option value="4399">Memory of Thanatos Card</option>
+                      <option value="4126">Minorous Card</option>
+                      <option value="4317">Mobster Card</option>
+                      <option value="4106">Mummy Card</option>
+                      <option value="4203">Mutant Dragonoid Card</option>
+                      <option value="4440">Necromancer Card</option>
+                      <option value="4255">Orc Lady Card</option>
+                      <option value="4085">Orc Skeleton Card</option>
+                      <option value="4310">Panzer Goblin Card</option>
+                      <option value="4007">Pecopeco Egg Card</option>
+                      <option value="4121">Phreeoni Card</option>
+                      <option value="4335">Pitman Card</option>
+                      <option value="4407">Randgris Card</option>
+                      <option value="4380">Red Ferus Card</option>
+                      <option value="4192">Rotar Zairo Card</option>
+                      <option value="4005">Santa Poring Card</option>
+                      <option value="4068">Scorpion Card</option>
+                      <option value="4130">Scorpion King Card</option>
+                      <option value="4273">Shell Fish Card</option>
+                      <option value="4117">Sidewinder Card</option>
+                      <option value="4092">Skel Worker Card</option>
+                      <option value="4086">Soldier Skeleton Card</option>
+                      <option value="4225">Stone Shooter Card</option>
+                      <option value="4318">Stormy Knight Card</option>
+                      <option value="4111">Strouf Card</option>
+                      <option value="4427">Sword Guardian Card</option>
+                      <option value="4172">The Paper Card</option>
+                      <option value="4305">Turtle General Card</option>
+                      <option value="4049">Vadon Card</option>
+                      <option value="4029">Wolf Card</option>
+                      <option value="4281">Zipper Bear Card</option>
+                    </select>
+                    <select class="form-control js equipment-select inline-short-select" id="equip_right_card4">
+                      <option value="">(Card)</option>
+                      <option value="4140">Abysmal Knight Card</option>
+                      <option value="4062">Anacondaq Card</option>
+                      <option value="4043">Andre Card</option>
+                      <option value="4094">Archer Skeleton Card</option>
+                      <option value="4246">Assulter Card</option>
+                      <option value="4247">Aster Card</option>
+                      <option value="4425">Atroce Card</option>
+                      <option value="4466">Beholder Master Card</option>
+                      <option value="4320">Bloody Knight Card</option>
+                      <option value="4214">Bloody Murderer Card</option>
+                      <option value="4428">Bow Guardian Card</option>
+                      <option value="4519">Butoijo Card</option>
+                      <option value="4063">Caramel Card</option>
+                      <option value="4202">Cat Official Card</option>
+                      <option value="4368">Cecil Damon Card</option>
+                      <option value="4153">Crab Card</option>
+                      <option value="4297">Cruiser Card</option>
+                      <option value="4388">Death Word Card</option>
+                      <option value="4082">Desert Wolf Card</option>
+                      <option value="4142">Doppelganger Card</option>
+                      <option value="4069">Drainliar Card</option>
+                      <option value="4004">Drops Card</option>
+                      <option value="4421">Drosera Card</option>
+                      <option value="4176">Dullahan Card</option>
+                      <option value="4118">Earth Petite Card</option>
+                      <option value="4360">Eremes Guile Card</option>
+                      <option value="4002">Fabre Card</option>
+                      <option value="4026">Female Thiefbug Card</option>
+                      <option value="4080">Flora Card</option>
+                      <option value="4312">Fur Seal Card</option>
+                      <option value="4323">Garm Bebe Card</option>
+                      <option value="4157">Goblin Archer Card</option>
+                      <option value="4060">Goblin Card</option>
+                      <option value="4155">Goblin Leader Card</option>
+                      <option value="4156">Goblin Steamrider Card</option>
+                      <option value="4163">Gryphon Card</option>
+                      <option value="4345">Hill Wind Card</option>
+                      <option value="4019">Hornet Card</option>
+                      <option value="4362">Howard Alt-Eisen Card</option>
+                      <option value="4035">Hydra Card</option>
+                      <option value="4263">Incantation Samurai Card</option>
+                      <option value="4268">Injustice Card</option>
+                      <option value="4065">Kaho Card</option>
+                      <option value="4292">Kobold Archer Card</option>
+                      <option value="4291">Kobold Leader Card</option>
+                      <option value="4394">Lady Solace Card</option>
+                      <option value="4350">Laurell Weinder Card</option>
+                      <option value="4184">Lava Golem Card</option>
+                      <option value="4006">Lunatic Card</option>
+                      <option value="4030">Mandragora Card</option>
+                      <option value="4399">Memory of Thanatos Card</option>
+                      <option value="4126">Minorous Card</option>
+                      <option value="4317">Mobster Card</option>
+                      <option value="4106">Mummy Card</option>
+                      <option value="4203">Mutant Dragonoid Card</option>
+                      <option value="4440">Necromancer Card</option>
+                      <option value="4255">Orc Lady Card</option>
+                      <option value="4085">Orc Skeleton Card</option>
+                      <option value="4310">Panzer Goblin Card</option>
+                      <option value="4007">Pecopeco Egg Card</option>
+                      <option value="4121">Phreeoni Card</option>
+                      <option value="4335">Pitman Card</option>
+                      <option value="4407">Randgris Card</option>
+                      <option value="4380">Red Ferus Card</option>
+                      <option value="4192">Rotar Zairo Card</option>
+                      <option value="4005">Santa Poring Card</option>
+                      <option value="4068">Scorpion Card</option>
+                      <option value="4130">Scorpion King Card</option>
+                      <option value="4273">Shell Fish Card</option>
+                      <option value="4117">Sidewinder Card</option>
+                      <option value="4092">Skel Worker Card</option>
+                      <option value="4086">Soldier Skeleton Card</option>
+                      <option value="4225">Stone Shooter Card</option>
+                      <option value="4318">Stormy Knight Card</option>
+                      <option value="4111">Strouf Card</option>
+                      <option value="4427">Sword Guardian Card</option>
+                      <option value="4172">The Paper Card</option>
+                      <option value="4305">Turtle General Card</option>
+                      <option value="4049">Vadon Card</option>
+                      <option value="4029">Wolf Card</option>
+                      <option value="4281">Zipper Bear Card</option>
+                    </select>
+                    <select class="form-control js equipment-select inline-short-select" id="equip_right_smith">
+                      <option value="">(Smith)</option>
+                      <option value="1">Ranked</option>
+                      <option value="2">1V Ranked</option>
+                      <option value="3">2V Ranked</option>
+                      <option value="4">3V Ranked</option>
+                      <option value="5">1V</option>
+                      <option value="6">2V</option>
+                      <option value="7">3V</option>
+                    </select></td>
+                </tr>
+                <tr style="display: none;">
+                  <td><select class="form-control js" id="equip_left_dual_refine">
+                      <option value="20">+20</option>
+                      <option value="19">+19</option>
+                      <option value="18">+18</option>
+                      <option value="17">+17</option>
+                      <option value="16">+16</option>
+                      <option value="15">+15</option>
+                      <option value="14">+14</option>
+                      <option value="13">+13</option>
+                      <option value="12">+12</option>
+                      <option value="11">+11</option>
+                      <option value="10">+10</option>
+                      <option value="9">+9</option>
+                      <option value="8">+8</option>
+                      <option value="7">+7</option>
+                      <option value="6">+6</option>
+                      <option value="5">+5</option>
+                      <option value="4">+4</option>
+                      <option value="3">+3</option>
+                      <option value="2">+2</option>
+                      <option value="1">+1</option>
+                      <option value="0" selected="">+0</option>
+                    </select></td>
+                  <td><select class="form-control equipment-select js" id="equip_left_dual">
+                      <option value="">(Left Hand)</option>
+                    </select></td>
+                  <td><select class="form-control js equipment-select inline-short-select" id="equip_left_dual_card1">
+                      <option value="">(Card)</option>
+                      <option value="4140">Abysmal Knight Card</option>
+                      <option value="4062">Anacondaq Card</option>
+                      <option value="4043">Andre Card</option>
+                      <option value="4094">Archer Skeleton Card</option>
+                      <option value="4246">Assulter Card</option>
+                      <option value="4247">Aster Card</option>
+                      <option value="4425">Atroce Card</option>
+                      <option value="4466">Beholder Master Card</option>
+                      <option value="4320">Bloody Knight Card</option>
+                      <option value="4214">Bloody Murderer Card</option>
+                      <option value="4428">Bow Guardian Card</option>
+                      <option value="4519">Butoijo Card</option>
+                      <option value="4063">Caramel Card</option>
+                      <option value="4202">Cat Official Card</option>
+                      <option value="4368">Cecil Damon Card</option>
+                      <option value="4153">Crab Card</option>
+                      <option value="4297">Cruiser Card</option>
+                      <option value="4388">Death Word Card</option>
+                      <option value="4082">Desert Wolf Card</option>
+                      <option value="4142">Doppelganger Card</option>
+                      <option value="4069">Drainliar Card</option>
+                      <option value="4004">Drops Card</option>
+                      <option value="4421">Drosera Card</option>
+                      <option value="4176">Dullahan Card</option>
+                      <option value="4118">Earth Petite Card</option>
+                      <option value="4360">Eremes Guile Card</option>
+                      <option value="4002">Fabre Card</option>
+                      <option value="4026">Female Thiefbug Card</option>
+                      <option value="4080">Flora Card</option>
+                      <option value="4312">Fur Seal Card</option>
+                      <option value="4323">Garm Bebe Card</option>
+                      <option value="4157">Goblin Archer Card</option>
+                      <option value="4060">Goblin Card</option>
+                      <option value="4155">Goblin Leader Card</option>
+                      <option value="4156">Goblin Steamrider Card</option>
+                      <option value="4163">Gryphon Card</option>
+                      <option value="4345">Hill Wind Card</option>
+                      <option value="4019">Hornet Card</option>
+                      <option value="4362">Howard Alt-Eisen Card</option>
+                      <option value="4035">Hydra Card</option>
+                      <option value="4263">Incantation Samurai Card</option>
+                      <option value="4268">Injustice Card</option>
+                      <option value="4065">Kaho Card</option>
+                      <option value="4292">Kobold Archer Card</option>
+                      <option value="4291">Kobold Leader Card</option>
+                      <option value="4394">Lady Solace Card</option>
+                      <option value="4350">Laurell Weinder Card</option>
+                      <option value="4184">Lava Golem Card</option>
+                      <option value="4006">Lunatic Card</option>
+                      <option value="4030">Mandragora Card</option>
+                      <option value="4399">Memory of Thanatos Card</option>
+                      <option value="4126">Minorous Card</option>
+                      <option value="4317">Mobster Card</option>
+                      <option value="4106">Mummy Card</option>
+                      <option value="4203">Mutant Dragonoid Card</option>
+                      <option value="4440">Necromancer Card</option>
+                      <option value="4255">Orc Lady Card</option>
+                      <option value="4085">Orc Skeleton Card</option>
+                      <option value="4310">Panzer Goblin Card</option>
+                      <option value="4007">Pecopeco Egg Card</option>
+                      <option value="4121">Phreeoni Card</option>
+                      <option value="4335">Pitman Card</option>
+                      <option value="4407">Randgris Card</option>
+                      <option value="4380">Red Ferus Card</option>
+                      <option value="4192">Rotar Zairo Card</option>
+                      <option value="4005">Santa Poring Card</option>
+                      <option value="4068">Scorpion Card</option>
+                      <option value="4130">Scorpion King Card</option>
+                      <option value="4273">Shell Fish Card</option>
+                      <option value="4117">Sidewinder Card</option>
+                      <option value="4092">Skel Worker Card</option>
+                      <option value="4086">Soldier Skeleton Card</option>
+                      <option value="4225">Stone Shooter Card</option>
+                      <option value="4318">Stormy Knight Card</option>
+                      <option value="4111">Strouf Card</option>
+                      <option value="4427">Sword Guardian Card</option>
+                      <option value="4172">The Paper Card</option>
+                      <option value="4305">Turtle General Card</option>
+                      <option value="4049">Vadon Card</option>
+                      <option value="4029">Wolf Card</option>
+                      <option value="4281">Zipper Bear Card</option>
+                    </select>
+                    <select class="form-control js equipment-select inline-short-select" id="equip_left_dual_card2">
+                      <option value="">(Card)</option>
+                      <option value="4140">Abysmal Knight Card</option>
+                      <option value="4062">Anacondaq Card</option>
+                      <option value="4043">Andre Card</option>
+                      <option value="4094">Archer Skeleton Card</option>
+                      <option value="4246">Assulter Card</option>
+                      <option value="4247">Aster Card</option>
+                      <option value="4425">Atroce Card</option>
+                      <option value="4466">Beholder Master Card</option>
+                      <option value="4320">Bloody Knight Card</option>
+                      <option value="4214">Bloody Murderer Card</option>
+                      <option value="4428">Bow Guardian Card</option>
+                      <option value="4519">Butoijo Card</option>
+                      <option value="4063">Caramel Card</option>
+                      <option value="4202">Cat Official Card</option>
+                      <option value="4368">Cecil Damon Card</option>
+                      <option value="4153">Crab Card</option>
+                      <option value="4297">Cruiser Card</option>
+                      <option value="4388">Death Word Card</option>
+                      <option value="4082">Desert Wolf Card</option>
+                      <option value="4142">Doppelganger Card</option>
+                      <option value="4069">Drainliar Card</option>
+                      <option value="4004">Drops Card</option>
+                      <option value="4421">Drosera Card</option>
+                      <option value="4176">Dullahan Card</option>
+                      <option value="4118">Earth Petite Card</option>
+                      <option value="4360">Eremes Guile Card</option>
+                      <option value="4002">Fabre Card</option>
+                      <option value="4026">Female Thiefbug Card</option>
+                      <option value="4080">Flora Card</option>
+                      <option value="4312">Fur Seal Card</option>
+                      <option value="4323">Garm Bebe Card</option>
+                      <option value="4157">Goblin Archer Card</option>
+                      <option value="4060">Goblin Card</option>
+                      <option value="4155">Goblin Leader Card</option>
+                      <option value="4156">Goblin Steamrider Card</option>
+                      <option value="4163">Gryphon Card</option>
+                      <option value="4345">Hill Wind Card</option>
+                      <option value="4019">Hornet Card</option>
+                      <option value="4362">Howard Alt-Eisen Card</option>
+                      <option value="4035">Hydra Card</option>
+                      <option value="4263">Incantation Samurai Card</option>
+                      <option value="4268">Injustice Card</option>
+                      <option value="4065">Kaho Card</option>
+                      <option value="4292">Kobold Archer Card</option>
+                      <option value="4291">Kobold Leader Card</option>
+                      <option value="4394">Lady Solace Card</option>
+                      <option value="4350">Laurell Weinder Card</option>
+                      <option value="4184">Lava Golem Card</option>
+                      <option value="4006">Lunatic Card</option>
+                      <option value="4030">Mandragora Card</option>
+                      <option value="4399">Memory of Thanatos Card</option>
+                      <option value="4126">Minorous Card</option>
+                      <option value="4317">Mobster Card</option>
+                      <option value="4106">Mummy Card</option>
+                      <option value="4203">Mutant Dragonoid Card</option>
+                      <option value="4440">Necromancer Card</option>
+                      <option value="4255">Orc Lady Card</option>
+                      <option value="4085">Orc Skeleton Card</option>
+                      <option value="4310">Panzer Goblin Card</option>
+                      <option value="4007">Pecopeco Egg Card</option>
+                      <option value="4121">Phreeoni Card</option>
+                      <option value="4335">Pitman Card</option>
+                      <option value="4407">Randgris Card</option>
+                      <option value="4380">Red Ferus Card</option>
+                      <option value="4192">Rotar Zairo Card</option>
+                      <option value="4005">Santa Poring Card</option>
+                      <option value="4068">Scorpion Card</option>
+                      <option value="4130">Scorpion King Card</option>
+                      <option value="4273">Shell Fish Card</option>
+                      <option value="4117">Sidewinder Card</option>
+                      <option value="4092">Skel Worker Card</option>
+                      <option value="4086">Soldier Skeleton Card</option>
+                      <option value="4225">Stone Shooter Card</option>
+                      <option value="4318">Stormy Knight Card</option>
+                      <option value="4111">Strouf Card</option>
+                      <option value="4427">Sword Guardian Card</option>
+                      <option value="4172">The Paper Card</option>
+                      <option value="4305">Turtle General Card</option>
+                      <option value="4049">Vadon Card</option>
+                      <option value="4029">Wolf Card</option>
+                      <option value="4281">Zipper Bear Card</option>
+                    </select>
+                    <select class="form-control js equipment-select inline-short-select" id="equip_left_dual_card3">
+                      <option value="">(Card)</option>
+                      <option value="4140">Abysmal Knight Card</option>
+                      <option value="4062">Anacondaq Card</option>
+                      <option value="4043">Andre Card</option>
+                      <option value="4094">Archer Skeleton Card</option>
+                      <option value="4246">Assulter Card</option>
+                      <option value="4247">Aster Card</option>
+                      <option value="4425">Atroce Card</option>
+                      <option value="4466">Beholder Master Card</option>
+                      <option value="4320">Bloody Knight Card</option>
+                      <option value="4214">Bloody Murderer Card</option>
+                      <option value="4428">Bow Guardian Card</option>
+                      <option value="4519">Butoijo Card</option>
+                      <option value="4063">Caramel Card</option>
+                      <option value="4202">Cat Official Card</option>
+                      <option value="4368">Cecil Damon Card</option>
+                      <option value="4153">Crab Card</option>
+                      <option value="4297">Cruiser Card</option>
+                      <option value="4388">Death Word Card</option>
+                      <option value="4082">Desert Wolf Card</option>
+                      <option value="4142">Doppelganger Card</option>
+                      <option value="4069">Drainliar Card</option>
+                      <option value="4004">Drops Card</option>
+                      <option value="4421">Drosera Card</option>
+                      <option value="4176">Dullahan Card</option>
+                      <option value="4118">Earth Petite Card</option>
+                      <option value="4360">Eremes Guile Card</option>
+                      <option value="4002">Fabre Card</option>
+                      <option value="4026">Female Thiefbug Card</option>
+                      <option value="4080">Flora Card</option>
+                      <option value="4312">Fur Seal Card</option>
+                      <option value="4323">Garm Bebe Card</option>
+                      <option value="4157">Goblin Archer Card</option>
+                      <option value="4060">Goblin Card</option>
+                      <option value="4155">Goblin Leader Card</option>
+                      <option value="4156">Goblin Steamrider Card</option>
+                      <option value="4163">Gryphon Card</option>
+                      <option value="4345">Hill Wind Card</option>
+                      <option value="4019">Hornet Card</option>
+                      <option value="4362">Howard Alt-Eisen Card</option>
+                      <option value="4035">Hydra Card</option>
+                      <option value="4263">Incantation Samurai Card</option>
+                      <option value="4268">Injustice Card</option>
+                      <option value="4065">Kaho Card</option>
+                      <option value="4292">Kobold Archer Card</option>
+                      <option value="4291">Kobold Leader Card</option>
+                      <option value="4394">Lady Solace Card</option>
+                      <option value="4350">Laurell Weinder Card</option>
+                      <option value="4184">Lava Golem Card</option>
+                      <option value="4006">Lunatic Card</option>
+                      <option value="4030">Mandragora Card</option>
+                      <option value="4399">Memory of Thanatos Card</option>
+                      <option value="4126">Minorous Card</option>
+                      <option value="4317">Mobster Card</option>
+                      <option value="4106">Mummy Card</option>
+                      <option value="4203">Mutant Dragonoid Card</option>
+                      <option value="4440">Necromancer Card</option>
+                      <option value="4255">Orc Lady Card</option>
+                      <option value="4085">Orc Skeleton Card</option>
+                      <option value="4310">Panzer Goblin Card</option>
+                      <option value="4007">Pecopeco Egg Card</option>
+                      <option value="4121">Phreeoni Card</option>
+                      <option value="4335">Pitman Card</option>
+                      <option value="4407">Randgris Card</option>
+                      <option value="4380">Red Ferus Card</option>
+                      <option value="4192">Rotar Zairo Card</option>
+                      <option value="4005">Santa Poring Card</option>
+                      <option value="4068">Scorpion Card</option>
+                      <option value="4130">Scorpion King Card</option>
+                      <option value="4273">Shell Fish Card</option>
+                      <option value="4117">Sidewinder Card</option>
+                      <option value="4092">Skel Worker Card</option>
+                      <option value="4086">Soldier Skeleton Card</option>
+                      <option value="4225">Stone Shooter Card</option>
+                      <option value="4318">Stormy Knight Card</option>
+                      <option value="4111">Strouf Card</option>
+                      <option value="4427">Sword Guardian Card</option>
+                      <option value="4172">The Paper Card</option>
+                      <option value="4305">Turtle General Card</option>
+                      <option value="4049">Vadon Card</option>
+                      <option value="4029">Wolf Card</option>
+                      <option value="4281">Zipper Bear Card</option>
+                    </select>
+                    <select class="form-control js equipment-select inline-short-select" id="equip_left_dual_card4">
+                      <option value="">(Card)</option>
+                      <option value="4140">Abysmal Knight Card</option>
+                      <option value="4062">Anacondaq Card</option>
+                      <option value="4043">Andre Card</option>
+                      <option value="4094">Archer Skeleton Card</option>
+                      <option value="4246">Assulter Card</option>
+                      <option value="4247">Aster Card</option>
+                      <option value="4425">Atroce Card</option>
+                      <option value="4466">Beholder Master Card</option>
+                      <option value="4320">Bloody Knight Card</option>
+                      <option value="4214">Bloody Murderer Card</option>
+                      <option value="4428">Bow Guardian Card</option>
+                      <option value="4519">Butoijo Card</option>
+                      <option value="4063">Caramel Card</option>
+                      <option value="4202">Cat Official Card</option>
+                      <option value="4368">Cecil Damon Card</option>
+                      <option value="4153">Crab Card</option>
+                      <option value="4297">Cruiser Card</option>
+                      <option value="4388">Death Word Card</option>
+                      <option value="4082">Desert Wolf Card</option>
+                      <option value="4142">Doppelganger Card</option>
+                      <option value="4069">Drainliar Card</option>
+                      <option value="4004">Drops Card</option>
+                      <option value="4421">Drosera Card</option>
+                      <option value="4176">Dullahan Card</option>
+                      <option value="4118">Earth Petite Card</option>
+                      <option value="4360">Eremes Guile Card</option>
+                      <option value="4002">Fabre Card</option>
+                      <option value="4026">Female Thiefbug Card</option>
+                      <option value="4080">Flora Card</option>
+                      <option value="4312">Fur Seal Card</option>
+                      <option value="4323">Garm Bebe Card</option>
+                      <option value="4157">Goblin Archer Card</option>
+                      <option value="4060">Goblin Card</option>
+                      <option value="4155">Goblin Leader Card</option>
+                      <option value="4156">Goblin Steamrider Card</option>
+                      <option value="4163">Gryphon Card</option>
+                      <option value="4345">Hill Wind Card</option>
+                      <option value="4019">Hornet Card</option>
+                      <option value="4362">Howard Alt-Eisen Card</option>
+                      <option value="4035">Hydra Card</option>
+                      <option value="4263">Incantation Samurai Card</option>
+                      <option value="4268">Injustice Card</option>
+                      <option value="4065">Kaho Card</option>
+                      <option value="4292">Kobold Archer Card</option>
+                      <option value="4291">Kobold Leader Card</option>
+                      <option value="4394">Lady Solace Card</option>
+                      <option value="4350">Laurell Weinder Card</option>
+                      <option value="4184">Lava Golem Card</option>
+                      <option value="4006">Lunatic Card</option>
+                      <option value="4030">Mandragora Card</option>
+                      <option value="4399">Memory of Thanatos Card</option>
+                      <option value="4126">Minorous Card</option>
+                      <option value="4317">Mobster Card</option>
+                      <option value="4106">Mummy Card</option>
+                      <option value="4203">Mutant Dragonoid Card</option>
+                      <option value="4440">Necromancer Card</option>
+                      <option value="4255">Orc Lady Card</option>
+                      <option value="4085">Orc Skeleton Card</option>
+                      <option value="4310">Panzer Goblin Card</option>
+                      <option value="4007">Pecopeco Egg Card</option>
+                      <option value="4121">Phreeoni Card</option>
+                      <option value="4335">Pitman Card</option>
+                      <option value="4407">Randgris Card</option>
+                      <option value="4380">Red Ferus Card</option>
+                      <option value="4192">Rotar Zairo Card</option>
+                      <option value="4005">Santa Poring Card</option>
+                      <option value="4068">Scorpion Card</option>
+                      <option value="4130">Scorpion King Card</option>
+                      <option value="4273">Shell Fish Card</option>
+                      <option value="4117">Sidewinder Card</option>
+                      <option value="4092">Skel Worker Card</option>
+                      <option value="4086">Soldier Skeleton Card</option>
+                      <option value="4225">Stone Shooter Card</option>
+                      <option value="4318">Stormy Knight Card</option>
+                      <option value="4111">Strouf Card</option>
+                      <option value="4427">Sword Guardian Card</option>
+                      <option value="4172">The Paper Card</option>
+                      <option value="4305">Turtle General Card</option>
+                      <option value="4049">Vadon Card</option>
+                      <option value="4029">Wolf Card</option>
+                      <option value="4281">Zipper Bear Card</option>
+                    </select>
+                    <select class="form-control js equipment-select inline-short-select" id="equip_left_dual_smith">
+                      <option value="">(Smith)</option>
+                      <option value="1">Ranked</option>
+                      <option value="2">1V Ranked</option>
+                      <option value="3">2V Ranked</option>
+                      <option value="4">3V Ranked</option>
+                      <option value="5">1V</option>
+                      <option value="6">2V</option>
+                      <option value="7">3V</option>
+                    </select></td>
+                </tr>
+                <tr>
+                  <td><select class="form-control js" id="equip_left_refine">
+                      <option value="20">+20</option>
+                      <option value="19">+19</option>
+                      <option value="18">+18</option>
+                      <option value="17">+17</option>
+                      <option value="16">+16</option>
+                      <option value="15">+15</option>
+                      <option value="14">+14</option>
+                      <option value="13">+13</option>
+                      <option value="12">+12</option>
+                      <option value="11">+11</option>
+                      <option value="10">+10</option>
+                      <option value="9">+9</option>
+                      <option value="8">+8</option>
+                      <option value="7">+7</option>
+                      <option value="6">+6</option>
+                      <option value="5">+5</option>
+                      <option value="4">+4</option>
+                      <option value="3">+3</option>
+                      <option value="2">+2</option>
+                      <option value="1">+1</option>
+                      <option value="0" selected="">+0</option>
+                    </select></td>
+                  <td><select class="form-control equipment-select js" id="equip_left">
+                      <option value="">(Shield)</option>
+                      <option value="2116">Angelic Guard [1]</option>
+                      <option value="2102">Guard [1]</option>
+                      <option value="2168">Immuned Shield [1]</option>
+                      <option value="2146">Siver Guard [1]</option>
+                      <option value="28923">Upg Guard [1]</option>
+                    </select></td>
+                  <td><select class="form-control js equipment-select" id="equip_left_card1">
+                      <option value="">(Card)</option>
+                      <option value="4013">Andre Egg Card</option>
+                      <option value="4397">Despero of Thanatos Card</option>
+                      <option value="4217">Enchanted Peach Tree Card</option>
+                      <option value="4090">Munak Card</option>
+                      <option value="4309">Parasite Card</option>
+                      <option value="4414">Seeker Card</option>
+                      <option value="4012">Thiefbug Egg Card</option>
+                      <option value="4277">Zherlthsh Card</option>
+                      <option value="4304">ยักษา Card</option>
+                    </select></td>
+                </tr>
+                <tr>
+                  <td><select class="form-control js" id="equip_body_refine">
+                      <option value="20">+20</option>
+                      <option value="19">+19</option>
+                      <option value="18">+18</option>
+                      <option value="17">+17</option>
+                      <option value="16">+16</option>
+                      <option value="15">+15</option>
+                      <option value="14">+14</option>
+                      <option value="13">+13</option>
+                      <option value="12">+12</option>
+                      <option value="11">+11</option>
+                      <option value="10">+10</option>
+                      <option value="9">+9</option>
+                      <option value="8">+8</option>
+                      <option value="7">+7</option>
+                      <option value="6">+6</option>
+                      <option value="5">+5</option>
+                      <option value="4">+4</option>
+                      <option value="3">+3</option>
+                      <option value="2">+2</option>
+                      <option value="1">+1</option>
+                      <option value="0" selected="">+0</option>
+                    </select></td>
+                  <td><select class="form-control equipment-select js" id="equip_body">
+                      <option value="">(Body)</option>
+                      <option value="2306">Adventurer's Suit [1]</option>
+                      <option value="2355">Angelic Protection [1]</option>
+                      <option value="2383">Brynhild</option>
+                      <option value="2302">Cotton Shirts [1]</option>
+                      <option value="2304">Jacket [1]</option>
+                      <option value="2340">Novice Breastplate [1]</option>
+                      <option value="2371">Pantie [1]</option>
+                      <option value="15009">Paradise Team Uniform1</option>
+                      <option value="15010">Paradise Team Uniform2</option>
+                      <option value="15011">Paradise Team Uniform3</option>
+                      <option value="15012">Puente Robe [1]</option>
+                      <option value="15197">Upg Adventure Suit [1]</option>
+                      <option value="15198">Upg Coat [1]</option>
+                    </select></td>
+                  <td><select class="form-control js equipment-select" id="equip_body_card1">
+                      <option value="">(Card)</option>
+                      <option value="4409">Agav Card</option>
+                      <option value="4401">Alicel Card</option>
+                      <option value="4387">Ancient Mimic Card</option>
+                      <option value="4234">Anolian Card</option>
+                      <option value="4242">Apocalipse Card</option>
+                      <option value="4371">Archdam Card</option>
+                      <option value="4023">Baby Desertwolf Card</option>
+                      <option value="4233">Baby Leopard Card</option>
+                      <option value="4450">Banshee Master Card</option>
+                      <option value="4426">Byorgue Card</option>
+                      <option value="4299">Clock Card</option>
+                      <option value="4516">Comodo Card</option>
+                      <option value="4392">Dame of Sentinel Card</option>
+                      <option value="4370">Dimik Card</option>
+                      <option value="4410">Echio Card</option>
+                      <option value="4346">Egnigem Cenia Card</option>
+                      <option value="4141">Evil Druid Card</option>
+                      <option value="4280">Geographer Card</option>
+                      <option value="4408">Gloom Under Night Card</option>
+                      <option value="4419">Ktullanux Card</option>
+                      <option value="4191">Loli Ruri Card</option>
+                      <option value="4393">Mistress of Shelter Card</option>
+                      <option value="4338">Obsidian Card</option>
+                      <option value="4031">Pecopeco Card</option>
+                      <option value="4008">Picky Card</option>
+                      <option value="4011">Picky Egg Card</option>
+                      <option value="4337">Porcellio Card</option>
+                      <option value="4001">Poring Card</option>
+                      <option value="4003">Pupa Card</option>
+                      <option value="4353">Remover Card</option>
+                      <option value="4021">Rocker Card</option>
+                      <option value="4014">Roda Frog Card</option>
+                      <option value="4078">Savage Card</option>
+                      <option value="4220">Solider Card</option>
+                      <option value="4218">Succubus Card</option>
+                      <option value="4016">Thief Bug Card</option>
+                      <option value="4369">Venatu Card</option>
+                      <option value="4332">Waste Stove Card</option>
+                      <option value="4259">Wooden Golem Card</option>
+                      <option value="4382">Yellow Novus Card</option>
+                    </select></td>
+                </tr>
+                <tr>
+                  <td><select class="form-control js" id="equip_robe_refine">
+                      <option value="20">+20</option>
+                      <option value="19">+19</option>
+                      <option value="18">+18</option>
+                      <option value="17">+17</option>
+                      <option value="16">+16</option>
+                      <option value="15">+15</option>
+                      <option value="14">+14</option>
+                      <option value="13">+13</option>
+                      <option value="12">+12</option>
+                      <option value="11">+11</option>
+                      <option value="10">+10</option>
+                      <option value="9">+9</option>
+                      <option value="8">+8</option>
+                      <option value="7">+7</option>
+                      <option value="6">+6</option>
+                      <option value="5">+5</option>
+                      <option value="4">+4</option>
+                      <option value="3">+3</option>
+                      <option value="2">+2</option>
+                      <option value="1">+1</option>
+                      <option value="0" selected="">+0</option>
+                    </select></td>
+                  <td><select class="form-control equipment-select js" id="equip_robe">
+                      <option value="">(Robe)</option>
+                      <option value="2521">Angelic Cardigan [1]</option>
+                      <option value="2573">Archangel Wing [1]</option>
+                      <option value="2541">Asprika</option>
+                      <option value="20800">Eremes's Cape [1]</option>
+                      <option value="20833">Fallen Angel Wing [1]</option>
+                      <option value="20841">Golden Angel Wing [1]</option>
+                      <option value="2502">Hood [1]</option>
+                      <option value="20707">Kirin Wing</option>
+                      <option value="20839">Light Darkness Wing [1]</option>
+                      <option value="2579">Magic Stole [1]</option>
+                      <option value="2560">Paradise Team Manteau</option>
+                      <option value="20919">Poring Backpack [1]</option>
+                      <option value="20837">Skin Of Gwiber [1]</option>
+                      <option value="20949">Skin Of Ladon [1]</option>
+                      <option value="20836">Skin of Lindwyrm [1]</option>
+                      <option value="20962">Skin Of Typhon [1]</option>
+                      <option value="2523">Undershirt [1]</option>
+                      <option value="20848">Upg Hood [1]</option>
+                    </select></td>
+                  <td><select class="form-control js equipment-select" id="equip_robe_card1">
+                      <option value="">(Card)</option>
+                      <option value="4402">Aliot Card</option>
+                      <option value="4129">Bapho Jr. Card</option>
+                      <option value="4285">Choco Card</option>
+                      <option value="4015">Condor Card</option>
+                      <option value="4179">Dragon Fly Card</option>
+                      <option value="4178">Dragon Tail Card</option>
+                      <option value="4266">Eclipse Card</option>
+                      <option value="4373">Green Maiden Card</option>
+                      <option value="4325">Harpy Card</option>
+                      <option value="4328">Hyegun Card</option>
+                      <option value="4431">Kasa Card</option>
+                      <option value="4351">Kavach Icarus Card</option>
+                      <option value="4520">Leak Card</option>
+                      <option value="4432">Magmaring Card</option>
+                      <option value="4197">Mastering Card</option>
+                      <option value="4159">Nine Tail Card</option>
+                      <option value="4375">Orc Baby Card</option>
+                      <option value="4313">Punk Card</option>
+                      <option value="4422">Roween Card</option>
+                      <option value="4429">Salamander Card</option>
+                      <option value="4306">Toad Card</option>
+                      <option value="4183">Vagabond Wolf Card</option>
+                      <option value="4211">Vocal Card</option>
+                      <option value="4210">Wander Man Card</option>
+                      <option value="4303">Whisper Boss Card</option>
+                      <option value="4102">Whisper Card</option>
+                    </select></td>
+                </tr>
+                <tr>
+                  <td><select class="form-control js" id="equip_shoes_refine">
+                      <option value="20">+20</option>
+                      <option value="19">+19</option>
+                      <option value="18">+18</option>
+                      <option value="17">+17</option>
+                      <option value="16">+16</option>
+                      <option value="15">+15</option>
+                      <option value="14">+14</option>
+                      <option value="13">+13</option>
+                      <option value="12">+12</option>
+                      <option value="11">+11</option>
+                      <option value="10">+10</option>
+                      <option value="9">+9</option>
+                      <option value="8">+8</option>
+                      <option value="7">+7</option>
+                      <option value="6">+6</option>
+                      <option value="5">+5</option>
+                      <option value="4">+4</option>
+                      <option value="3">+3</option>
+                      <option value="2">+2</option>
+                      <option value="1">+1</option>
+                      <option value="0" selected="">+0</option>
+                    </select></td>
+                  <td><select class="form-control equipment-select js" id="equip_shoes">
+                      <option value="">(Shoes)</option>
+                      <option value="2420">Angel's Reincarnation [1]</option>
+                      <option value="2456">Paradise Team Boots1</option>
+                      <option value="2457">Paradise Team Boots2</option>
+                      <option value="2458">Paradise Team Boots3</option>
+                      <option value="2402">Sandals [1]</option>
+                      <option value="2408">Shackles</option>
+                      <option value="2410">Sleipnir</option>
+                    </select></td>
+                  <td><select class="form-control js equipment-select" id="equip_shoes_card1">
+                      <option value="">(Card)</option>
+                      <option value="4244">Alarm Card</option>
+                      <option value="4236">Amon Ra Card</option>
+                      <option value="4009">Chonchon Card</option>
+                      <option value="4168">Dark Lord Card</option>
+                      <option value="4070">Eggyra Card</option>
+                      <option value="4441">Fallen Bishop Card</option>
+                      <option value="4160">Firelock Soldier Card</option>
+                      <option value="4319">Freezer Card</option>
+                      <option value="4378">Gold Acidus Card</option>
+                      <option value="4381">Green Ferus Card</option>
+                      <option value="4417">Ice Titan Card</option>
+                      <option value="4376">Lady Tanee Card</option>
+                      <option value="4050">Male Thiefbug Card</option>
+                      <option value="4097">Matyr Card</option>
+                      <option value="4199">Merman Card</option>
+                      <option value="4208">Miyabi Doll Card</option>
+                      <option value="4396">Odium of Thanatos Card</option>
+                      <option value="4186">Raggler Card</option>
+                      <option value="4100">Sohee Card</option>
+                      <option value="4107">Verit Card</option>
+                      <option value="4257">Wild Rose Card</option>
+                      <option value="4038">Zombie Card</option>
+                      <option value="4435">Zombie Slaughter Card</option>
+                    </select></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><select class="form-control equipment-select js" id="equip_accessory1">
+                      <option value="">(Accessory 1)</option>
+                      <option value="2767">Acolyte Figure</option>
+                      <option value="2741">All In One Ring</option>
+                      <option value="2769">Archer Figure</option>
+                      <option value="2627">Belt [1]</option>
+                      <option value="2630">Brisingamen</option>
+                      <option value="2607">Clip [1]</option>
+                      <option value="2959">Fidelity Necklace [1]</option>
+                      <option value="2652">Goddess of Fortune's Cursed Brooch</option>
+                      <option value="28512">Golden Clip [1]</option>
+                      <option value="32272">Howard Necklace [1]</option>
+                      <option value="32271">Jonin Sash [1]</option>
+                      <option value="28507">Kathryne's Gloves [1]</option>
+                      <option value="2680">Lesser Elemental Ring</option>
+                      <option value="2768">Mage Figure</option>
+                      <option value="32279">Magician Ring [1]</option>
+                      <option value="2629">Megingjard</option>
+                      <option value="2771">Merchant Figure</option>
+                      <option value="2628">Novice Armlet [1]</option>
+                      <option value="2765">Novice Figure</option>
+                      <option value="28379">Shadow Ring [1]</option>
+                      <option value="2715">Skull Ring [1]</option>
+                      <option value="2677">Spiritual Ring</option>
+                      <option value="2766">Swordman Figure</option>
+                      <option value="2644">The Sign</option>
+                      <option value="2770">Thief Figure</option>
+                      <option value="2855">Whikebain's Black Tail</option>
+                    </select></td>
+                  <td><select class="form-control js equipment-select" id="equip_accessory1_card1">
+                      <option value="">(Card)</option>
+                      <option value="4252">Alligator Card</option>
+                      <option value="4327">Blood Butterfly Card</option>
+                      <option value="4212">Bongun Card</option>
+                      <option value="4293">Cookie Card</option>
+                      <option value="4272">Dancing Dragon Card</option>
+                      <option value="4423">Galion Card</option>
+                      <option value="4418">Gazeti Card</option>
+                      <option value="4331">Heater Card</option>
+                      <option value="4437">Hell Poodle Card</option>
+                      <option value="4321">Hylozoist Card</option>
+                      <option value="4430">Ifrit Card</option>
+                      <option value="4433">Imp Card</option>
+                      <option value="4091">Kobold Card</option>
+                      <option value="4027">Kukre Card</option>
+                      <option value="4193">Lude Card</option>
+                      <option value="4079">Mantis Card</option>
+                      <option value="4084">Marine Sphere Card</option>
+                      <option value="4036">Muka Card</option>
+                      <option value="4048">Poison Spore Card</option>
+                      <option value="4175">Poisonous Toad Card</option>
+                      <option value="4294">Quve Card</option>
+                      <option value="4436">Ragged Zombie Card</option>
+                      <option value="4230">Shinobi Card</option>
+                      <option value="4416">Siroma Card</option>
+                      <option value="4022">Spore Card</option>
+                      <option value="4028">Tarou Card</option>
+                      <option value="4053">Vitata Card</option>
+                      <option value="4348">Wickebine Tres Card</option>
+                      <option value="4264">Wind Ghost Card</option>
+                      <option value="4051">Yoyo Card</option>
+                      <option value="4064">Zerom Card</option>
+                    </select></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><select class="form-control equipment-select js" id="equip_accessory2">
+                      <option value="">(Accessory 2)</option>
+                      <option value="2767">Acolyte Figure</option>
+                      <option value="2741">All In One Ring</option>
+                      <option value="2769">Archer Figure</option>
+                      <option value="2627">Belt [1]</option>
+                      <option value="2630">Brisingamen</option>
+                      <option value="2607">Clip [1]</option>
+                      <option value="2959">Fidelity Necklace [1]</option>
+                      <option value="2652">Goddess of Fortune's Cursed Brooch</option>
+                      <option value="28512">Golden Clip [1]</option>
+                      <option value="32272">Howard Necklace [1]</option>
+                      <option value="32271">Jonin Sash [1]</option>
+                      <option value="28507">Kathryne's Gloves [1]</option>
+                      <option value="2680">Lesser Elemental Ring</option>
+                      <option value="2768">Mage Figure</option>
+                      <option value="32279">Magician Ring [1]</option>
+                      <option value="2629">Megingjard</option>
+                      <option value="2771">Merchant Figure</option>
+                      <option value="2628">Novice Armlet [1]</option>
+                      <option value="2765">Novice Figure</option>
+                      <option value="28379">Shadow Ring [1]</option>
+                      <option value="2715">Skull Ring [1]</option>
+                      <option value="2677">Spiritual Ring</option>
+                      <option value="2766">Swordman Figure</option>
+                      <option value="2644">The Sign</option>
+                      <option value="2770">Thief Figure</option>
+                      <option value="2855">Whikebain's Black Tail</option>
+                    </select></td>
+                  <td><select class="form-control js equipment-select" id="equip_accessory2_card1">
+                      <option value="">(Card)</option>
+                      <option value="4252">Alligator Card</option>
+                      <option value="4327">Blood Butterfly Card</option>
+                      <option value="4212">Bongun Card</option>
+                      <option value="4293">Cookie Card</option>
+                      <option value="4272">Dancing Dragon Card</option>
+                      <option value="4423">Galion Card</option>
+                      <option value="4418">Gazeti Card</option>
+                      <option value="4331">Heater Card</option>
+                      <option value="4437">Hell Poodle Card</option>
+                      <option value="4321">Hylozoist Card</option>
+                      <option value="4430">Ifrit Card</option>
+                      <option value="4433">Imp Card</option>
+                      <option value="4091">Kobold Card</option>
+                      <option value="4027">Kukre Card</option>
+                      <option value="4193">Lude Card</option>
+                      <option value="4079">Mantis Card</option>
+                      <option value="4084">Marine Sphere Card</option>
+                      <option value="4036">Muka Card</option>
+                      <option value="4048">Poison Spore Card</option>
+                      <option value="4175">Poisonous Toad Card</option>
+                      <option value="4294">Quve Card</option>
+                      <option value="4436">Ragged Zombie Card</option>
+                      <option value="4230">Shinobi Card</option>
+                      <option value="4416">Siroma Card</option>
+                      <option value="4022">Spore Card</option>
+                      <option value="4028">Tarou Card</option>
+                      <option value="4053">Vitata Card</option>
+                      <option value="4348">Wickebine Tres Card</option>
+                      <option value="4264">Wind Ghost Card</option>
+                      <option value="4051">Yoyo Card</option>
+                      <option value="4064">Zerom Card</option>
+                    </select></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><select class="form-control equipment-select js" id="equip_costume_head1">
+                      <option value="">(Costume 1)</option>
+                      <option value="19589">Fallen Angel's beloning</option>
+                    </select></td>
+                </tr>
+                <tr style="display: none;">
+                  <td></td>
+                  <td><select class="form-control equipment-select js" id="equip_ammunition">
+                      <option value="">(Ammunition)</option>
+                    </select></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><select class="form-control equipment-select js" id="equip_element">
+                      <option value="">(Element)</option>
+                      <option value="1">Water</option>
+                      <option value="2">Earth</option>
+                      <option value="3">Fire</option>
+                      <option value="4">Wind</option>
+                      <option value="5">Poison</option>
+                      <option value="6">Holy</option>
+                      <option value="7">Dark</option>
+                      <option value="8">Ghost</option>
+                      <option value="9">Undead</option>
+                    </select></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><select class="form-control equipment-select js" id="equip_pet">
+                      <option value="">(Q-Pet)</option>
+                      <option value="9027">Alice</option>
+                      <option value="9010">Baby Desert Wolf</option>
+                      <option value="9024">Bapho Jr.</option>
+                      <option value="9025">Bongun</option>
+                      <option value="9006">Chonchon</option>
+                      <option value="9023">Deviruchi</option>
+                      <option value="9019">Dokebi</option>
+                      <option value="9002">Drops</option>
+                      <option value="9030">Green Maiden</option>
+                      <option value="9022">Green Petite</option>
+                      <option value="9008">Hunter Fly</option>
+                      <option value="9021">Isis</option>
+                      <option value="9004">Lunatic</option>
+                      <option value="9018">Munak</option>
+                      <option value="9017">Orc Warrior</option>
+                      <option value="9014">PecoPeco</option>
+                      <option value="9005">Picky</option>
+                      <option value="9013">Poison Spore</option>
+                      <option value="9003">Poporing</option>
+                      <option value="9001">Poring</option>
+                      <option value="9011">Rocker</option>
+                      <option value="9009">Savage Babe</option>
+                      <option value="9015">Smokie</option>
+                      <option value="9020">Sohee</option>
+                      <option value="9012">Spore</option>
+                      <option value="9007">Steel Chonchon</option>
+                      <option value="9055">Succubus</option>
+                      <option value="9016">Yoyo</option>
+                      <option value="9026">Zealotus</option>
+                    </select></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tab-pane" id="item">
+            <div id="item_buff">
+              <div class="form-line"><label><input type="checkbox" class="js" id="item_1"> VIP (All stats +10)</label>
+              </div>
+              <div class="form-line"><label><input type="checkbox" class="js" id="item_2"> All Biscuits (All stats
+                  +15)</label></div>
+              <div class="form-line"><label><input type="checkbox" class="js" id="item_645"> Concentration Potion (Aspd
+                  +10%)</label></div>
+              <div class="form-line"><label><input type="checkbox" class="js" id="item_656"> Awakening Potion (Aspd
+                  +15%)</label></div>
+              <div class="form-line"><label><input type="checkbox" class="js" id="item_657"> Berserk Potion (Aspd
+                  +20%)</label></div>
+              <div class="form-line"><label><input type="checkbox" class="js" id="item_12029"> Gloomy Box (Improve
+                  Concentration Lv. 1)</label></div>
+              <div class="form-line"><label><input type="checkbox" class="js" id="item_12030"> Box Of Grudge (Atk
+                  +20)</label></div>
+              <div class="form-line"><label><input type="checkbox" class="js" id="item_12031"> Sleepy Box (Matk
+                  +20)</label></div>
+              <div class="form-line"><label><input type="checkbox" class="js" id="item_12122"> Sesame Pastry (Hit
+                  +30)</label></div>
+              <div class="form-line"><label><input type="checkbox" class="js" id="item_12123"> Honey Pastry (Flee
+                  +30)</label></div>
+              <div class="form-line"><label><input type="checkbox" class="js" id="item_12124"> Rainbow Cake (Atk/Matk
+                  +10)</label></div>
+              <div class="form-line"><label><input type="checkbox" class="js" id="item_12354"> Buche De Noel (Hit +3,
+                  Critical +7)</label></div>
+              <div class="form-line"><label><input type="checkbox" class="js" id="item_12646"> Takoyaki (Luk +9,
+                  Atk/Matk +20)</label></div>
+              <div class="form-line"><label><input type="checkbox" class="js" id="item_12684"> ASPD Intensifying Potion
+                  (Aspd +3%)</label></div>
+              <div class="form-line"><label><input type="checkbox" class="js" id="item_14536"> Abrasive (Critical
+                  +30)</label></div>
+              <div class="form-line"><label><input type="checkbox" class="js" id="item_14586"> Sparkling Candy (Atk +20,
+                  Aspd +25%)</label></div>
+            </div>
+          </div>
+          <div class="tab-pane" id="extra">
+            <div id="extra_buff" class="row">
+              <div class="form-line form-line-column"><input type="number" class="form-control js" min="-200" max="200"
+                  id="extra_str"> Str</div>
+              <div class="form-line form-line-column"><input type="number" class="form-control js" min="-200" max="200"
+                  id="extra_agi"> Agi</div>
+              <div class="form-line form-line-column"><input type="number" class="form-control js" min="-200" max="200"
+                  id="extra_vit"> Vit</div>
+              <div class="form-line form-line-column"><input type="number" class="form-control js" min="-200" max="200"
+                  id="extra_int"> Int</div>
+              <div class="form-line form-line-column"><input type="number" class="form-control js" min="-200" max="200"
+                  id="extra_dex"> Dex</div>
+              <div class="form-line form-line-column"><input type="number" class="form-control js" min="-200" max="200"
+                  id="extra_luk"> Luk</div>
+              <div class="form-line form-line-column"><input type="number" class="form-control js" min="-200" max="200"
+                  id="extra_all_stats"> All Stats</div>
+              <div class="form-line form-line-column"><input type="number" class="form-control js" min="-5000"
+                  max="5000" id="extra_hp"> Hp</div>
+              <div class="form-line form-line-column"><input type="number" class="form-control js" min="-200" max="200"
+                  id="extra_hp_mul"> % Hp</div>
+              <div class="form-line form-line-column"><input type="number" class="form-control js" min="-5000"
+                  max="5000" id="extra_sp"> Sp</div>
+              <div class="form-line form-line-column"><input type="number" class="form-control js" min="-200" max="200"
+                  id="extra_sp_mul"> % Sp</div>
+              <div class="form-line form-line-column"><input type="number" class="form-control js" min="-200" max="200"
+                  id="extra_hp_reg"> % Hp Re.</div>
+              <div class="form-line form-line-column"><input type="number" class="form-control js" min="-200" max="200"
+                  id="extra_sp_reg"> % Sp Re.</div>
+              <div class="form-line form-line-column"><input type="number" class="form-control js" min="-200" max="200"
+                  id="extra_atk"> Atk</div>
+              <div class="form-line form-line-column"><input type="number" class="form-control js" min="-200" max="200"
+                  id="extra_atk_mul"> % Atk</div>
+              <div class="form-line form-line-column"><input type="number" class="form-control js" min="-200" max="200"
+                  id="extra_matk"> Matk</div>
+              <div class="form-line form-line-column"><input type="number" class="form-control js" min="-200" max="200"
+                  id="extra_matk_mul"> % Matk</div>
+              <div class="form-line form-line-column"><input type="number" class="form-control js" min="-200" max="200"
+                  id="extra_def"> Def</div>
+              <div class="form-line form-line-column"><input type="number" class="form-control js" min="-200" max="200"
+                  id="extra_mdef"> Mdef</div>
+              <div class="form-line form-line-column"><input type="number" class="form-control js" min="-50" max="50"
+                  id="extra_aspd"> Aspd</div>
+              <div class="form-line form-line-column"><input type="number" class="form-control js" min="-100" max="100"
+                  id="extra_aspd_equip_mul"> % Aspd</div>
+              <div class="form-line form-line-column"><input type="number" class="form-control js" min="-100" max="100"
+                  id="extra_aspd_mul"> <span data-toggle="tooltip" title="" data-original-title="% Aspd from skill"> %
+                  Aspd*</span></div>
+              <div class="form-line form-line-column"><input type="number" class="form-control js" min="-200" max="200"
+                  id="extra_hit"> Hit</div>
+              <div class="form-line form-line-column"><input type="number" class="form-control js" min="-200" max="200"
+                  id="extra_flee"> Flee</div>
+              <div class="form-line form-line-column"><input type="number" class="form-control js" min="-100" max="100"
+                  id="extra_pdodge"> P. Dodge</div>
+              <div class="form-line form-line-column"><input type="number" class="form-control js" min="-100" max="100"
+                  id="extra_crit"> Critical</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="https://stat.prtwiki.in.th/#opponent" data-toggle="tab">Opponent</a></li>
+        </ul>
+        <br>
+        <div class="tab-content">
+          <div class="tab-pane active" id="opponent">
+            <table class="information">
+              <tbody>
+                <tr>
+                  <td>Detail</td>
+                  <td id="target_detail"></td>
+                </tr>
+              </tbody>
+            </table>
+            <select class="form-control js" id="target">
+              <option value="1000">Player</option>
+              <option value="1219">Abysmal Knight</option>
+              <option value="1716">Acidus (Blue)</option>
+              <option value="1713">Acidus (Gold)</option>
+              <option value="1769">Agav</option>
+              <option value="1193">Alarm</option>
+              <option value="1275">Alice</option>
+              <option value="1735">Alicel</option>
+              <option value="1736">Aliot</option>
+              <option value="1737">Aliza</option>
+              <option value="1271">Alligator</option>
+              <option value="2151">Alnoldi</option>
+              <option value="1301">Am Mut</option>
+              <option value="1094">Ambernite</option>
+              <option value="1511">Amon Ra</option>
+              <option value="1030">Anacondaq</option>
+              <option value="1699">Ancient Mimic</option>
+              <option value="1297">Ancient Mummy</option>
+              <option value="1305">Ancient Worm</option>
+              <option value="1095">Andre</option>
+              <option value="1096">Angeling</option>
+              <option value="1206">Anolian</option>
+              <option value="1627">Anopheles</option>
+              <option value="1097">Ant Egg</option>
+              <option value="1098">Anubis</option>
+              <option value="1365">Apocalypse</option>
+              <option value="1388">Arc Angeling</option>
+              <option value="1668">Archdam</option>
+              <option value="1016">Archer Skeleton</option>
+              <option value="1194">Arclouze</option>
+              <option value="1099">Argiope</option>
+              <option value="1100">Argos</option>
+              <option value="1654">Armeyer Dinze</option>
+              <option value="1647">Assassin Cross Eremes (MVP)</option>
+              <option value="1315">Assaulter</option>
+              <option value="1266">Aster</option>
+              <option value="1785">Atroce</option>
+              <option value="1796">Aunoe</option>
+              <option value="1882">Baba Yaga</option>
+              <option value="1107">Baby Desert Wolf</option>
+              <option value="1515">Baby Hatii</option>
+              <option value="1415">Baby Leopard</option>
+              <option value="2154">Banaspaty</option>
+              <option value="1867">Banshee</option>
+              <option value="1974">Banshee Master</option>
+              <option value="1039">Baphomet</option>
+              <option value="1101">Baphomet Jr.</option>
+              <option value="1702">Baroness of Retribution</option>
+              <option value="1102">Bathory</option>
+              <option value="1873">Beelzebub (1st Form)</option>
+              <option value="1874">Beelzebub (2nd Form)</option>
+              <option value="1494">Beetle King</option>
+              <option value="1633">Beholder</option>
+              <option value="1975">Beholder Master</option>
+              <option value="1060">Bigfoot</option>
+              <option value="1367">Blazer</option>
+              <option value="1408">Bloody Butterfly</option>
+              <option value="1268">Bloody Knight</option>
+              <option value="1507">Bloody Murderer</option>
+              <option value="1025">Boa</option>
+              <option value="1188">Bongun</option>
+              <option value="1830">Bow Guardian</option>
+              <option value="1692">Breeze</option>
+              <option value="1211">Brilight</option>
+              <option value="2155">Butoijo</option>
+              <option value="1839">Byorgue</option>
+              <option value="1103">Caramel</option>
+              <option value="1267">Carat</option>
+              <option value="1307">Cat O' Nine Tails</option>
+              <option value="1300">Caterpillar</option>
+              <option value="1638">Cecil Damon</option>
+              <option value="2153">Cendrawasih</option>
+              <option value="1250">Chepet</option>
+              <option value="1283">Chimera</option>
+              <option value="1214">Choco</option>
+              <option value="1011">Chonchon</option>
+              <option value="1269">Clock</option>
+              <option value="1270">Clock Tower Manager</option>
+              <option value="1976">Cobalt Mineral</option>
+              <option value="1104">Coco</option>
+              <option value="2152">Comodo</option>
+              <option value="1009">Condor</option>
+              <option value="1738">Constant</option>
+              <option value="1265">Cookie (Green)</option>
+              <option value="1246">Cookie (Red)</option>
+              <option value="1067">Cornutus</option>
+              <option value="1073">Crab</option>
+              <option value="1209">Cramp</option>
+              <option value="1018">Creamy</option>
+              <option value="1293">Creamy Fear</option>
+              <option value="1248">Cruiser</option>
+              <option value="1700">Dame of Sentinel</option>
+              <option value="1260">Dark Frame</option>
+              <option value="1302">Dark Illusion</option>
+              <option value="1272">Dark Lord</option>
+              <option value="1698">Death Word</option>
+              <option value="1385">Deleter (Ground)</option>
+              <option value="1384">Deleter (Sky)</option>
+              <option value="1378">Demon Pungus</option>
+              <option value="1105">Deniro</option>
+              <option value="1106">Desert Wolf</option>
+              <option value="1705">Despero of Thanatos</option>
+              <option value="1719">Detardeurus</option>
+              <option value="1108">Deviace</option>
+              <option value="1582">Deviling</option>
+              <option value="1109">Deviruchi</option>
+              <option value="1382">Diabolic</option>
+              <option value="1671">Dimik (Blue)</option>
+              <option value="1670">Dimik (Green)</option>
+              <option value="1672">Dimik (Orange)</option>
+              <option value="1673">Dimik (Red)</option>
+              <option value="1506">Disguise</option>
+              <option value="1110">Dokebi</option>
+              <option value="1707">Dolor of Thanatos</option>
+              <option value="1046">Doppelganger</option>
+              <option value="1721">Dragon Egg</option>
+              <option value="1091">Dragon Fly</option>
+              <option value="1321">Dragon Tail</option>
+              <option value="1111">Drainliar</option>
+              <option value="1112">Drake</option>
+              <option value="1380">Driller</option>
+              <option value="1113">Drops</option>
+              <option value="1781">Drosera</option>
+              <option value="1493">Dryad</option>
+              <option value="1504">Dullahan</option>
+              <option value="1409">Dumpling Child</option>
+              <option value="1114">Dustiness</option>
+              <option value="1770">Echio</option>
+              <option value="1093">Eclipse</option>
+              <option value="1115">Eddga</option>
+              <option value="1116">Eggyra</option>
+              <option value="1652">Egnigem Cenia</option>
+              <option value="1658">Egnigem Cenia (MVP)</option>
+              <option value="1377">Elder</option>
+              <option value="1033">Elder Willow</option>
+              <option value="1410">Enchanted Peach Tree</option>
+              <option value="1635">Eremes Guile</option>
+              <option value="1655">Errende Ebecee</option>
+              <option value="1117">Evil Druid</option>
+              <option value="1416">Evil Nymph</option>
+              <option value="1418">Evil Snake Lord</option>
+              <option value="1205">Executioner</option>
+              <option value="1383">Explosion</option>
+              <option value="1007">Fabre</option>
+              <option value="1871">Falling Bishop</option>
+              <option value="1371">False Angel</option>
+              <option value="1005">Familiar</option>
+              <option value="1797">Fanat</option>
+              <option value="1053">Female Thief Bug</option>
+              <option value="1717">Ferus (Green)</option>
+              <option value="1714">Ferus (Red)</option>
+              <option value="1403">Firelock Soldier</option>
+              <option value="1869">Flame Skull</option>
+              <option value="1118">Flora</option>
+              <option value="1319">Freezer</option>
+              <option value="1119">Frilldora</option>
+              <option value="1753">Frus</option>
+              <option value="1309">Gajomart</option>
+              <option value="1391">Galapago</option>
+              <option value="1783">Galion</option>
+              <option value="1253">Gargoyle</option>
+              <option value="1778">Gazeti</option>
+              <option value="1681">Gemini-S58</option>
+              <option value="1368">Geographer</option>
+              <option value="1120">Ghostring</option>
+              <option value="1036">Ghoul</option>
+              <option value="1303">Giant Hornet</option>
+              <option value="1304">Giant Spider</option>
+              <option value="1186">Giant Whisper</option>
+              <option value="1503">Gibbet</option>
+              <option value="1121">Giearth</option>
+              <option value="1387">Gig</option>
+              <option value="1768">Gloom Under Night</option>
+              <option value="1372">Goat</option>
+              <option value="1124">Goblin (Axe)</option>
+              <option value="1122">Goblin (Dagger)</option>
+              <option value="1123">Goblin (Flail)</option>
+              <option value="1125">Goblin (Hammer)</option>
+              <option value="1126">Goblin (Mace)</option>
+              <option value="1258">Goblin Archer</option>
+              <option value="1299">Goblin Leader</option>
+              <option value="1086">Golden Thief Bug</option>
+              <option value="1040">Golem</option>
+              <option value="1885">Gopinich</option>
+              <option value="1369">Grand Peco</option>
+              <option value="1929">Great Demon Baphomet</option>
+              <option value="1277">Greatest General</option>
+              <option value="1631">Green Maiden</option>
+              <option value="1632">Gremlin</option>
+              <option value="1381">Grizzly</option>
+              <option value="1687">Grove</option>
+              <option value="1259">Gryphon</option>
+              <option value="1311">Gullinbursti</option>
+              <option value="1376">Harpy</option>
+              <option value="1252">Hatii</option>
+              <option value="1318">Heater</option>
+              <option value="1977">Heavy Metaling</option>
+              <option value="1510">Heirozoist</option>
+              <option value="1978">Hell Apocalips</option>
+              <option value="1866">Hellhound</option>
+              <option value="1413">Hermit Plant</option>
+              <option value="1213">High Orc</option>
+              <option value="1649">High Priest Margaretha (MVP)</option>
+              <option value="1651">High Wizard Kathryne (MVP)</option>
+              <option value="1680">Hill Wind</option>
+              <option value="1127">Hode</option>
+              <option value="1773">Hodremlin</option>
+              <option value="1628">Holden</option>
+              <option value="1128">Horn</option>
+              <option value="1004">Hornet</option>
+              <option value="1129">Horong</option>
+              <option value="1636">Howard Alt-Eisen</option>
+              <option value="1035">Hunter Fly</option>
+              <option value="1068">Hydra</option>
+              <option value="1720">Hydrolancer</option>
+              <option value="1777">Ice Titan</option>
+              <option value="1789">Iceicle</option>
+              <option value="1832">Ifrit</option>
+              <option value="1837">Imp</option>
+              <option value="1374">Incubus</option>
+              <option value="1257">Injustice</option>
+              <option value="1212">Iron Fist</option>
+              <option value="1772">Isilla</option>
+              <option value="1029">Isis</option>
+              <option value="1130">Jakk</option>
+              <option value="1517">Jing Guai</option>
+              <option value="1131">Joker</option>
+              <option value="1072">Kaho</option>
+              <option value="1406">Kapha</option>
+              <option value="1400">Karakasa</option>
+              <option value="1833">Kasa</option>
+              <option value="1639">Kathryne Keyron</option>
+              <option value="1656">Kavach Icarus</option>
+              <option value="1132">Khalitzburg</option>
+              <option value="1734">Kiel-D-01</option>
+              <option value="1294">Killer Mantis</option>
+              <option value="1838">Knocker</option>
+              <option value="1133">Kobold (Axe)</option>
+              <option value="1134">Kobold (Hammer)</option>
+              <option value="1135">Kobold (Mace)</option>
+              <option value="1282">Kobold Archer</option>
+              <option value="1296">Kobold Leader</option>
+              <option value="1587">Kraben</option>
+              <option value="1779">Ktullanux</option>
+              <option value="1980">Kublin</option>
+              <option value="1070">Kukre</option>
+              <option value="1703">Lady Solace</option>
+              <option value="1688">Lady Tanee</option>
+              <option value="1657">Laurell Weinder</option>
+              <option value="1366">Lava Golem</option>
+              <option value="1586">Leaf Cat</option>
+              <option value="2156">Leak</option>
+              <option value="1306">Leib Olmai</option>
+              <option value="1881">Les</option>
+              <option value="1505">Loli Ruri</option>
+              <option value="1646">Lord Knight Seyren (MVP)</option>
+              <option value="1373">Lord of Death</option>
+              <option value="1509">Lude</option>
+              <option value="1063">Lunatic</option>
+              <option value="1706">Maero of Thanatos</option>
+              <option value="1836">Magmaring</option>
+              <option value="1138">Magnolia</option>
+              <option value="1310">Majoruros</option>
+              <option value="1054">Male Thief Bug</option>
+              <option value="1020">Mandragora</option>
+              <option value="1139">Mantis</option>
+              <option value="1513">Mao Guai</option>
+              <option value="1045">Marc</option>
+              <option value="1140">Marduk</option>
+              <option value="1637">Margaretha Sorin</option>
+              <option value="1242">Marin</option>
+              <option value="1141">Marina</option>
+              <option value="1142">Marine Sphere</option>
+              <option value="1143">Marionette</option>
+              <option value="1144">Marse</option>
+              <option value="1145">Martin</option>
+              <option value="1648">Master Smith Howard (MVP)</option>
+              <option value="1090">Mastering</option>
+              <option value="1146">Matyr</option>
+              <option value="1884">Mavka</option>
+              <option value="1147">Maya</option>
+              <option value="1289">Maya Purple</option>
+              <option value="1148">Medusa</option>
+              <option value="1274">Megalith</option>
+              <option value="1064">Megalodon</option>
+              <option value="1264">Merman</option>
+              <option value="1613">Metaling</option>
+              <option value="1058">Metaller</option>
+              <option value="1516">Mi Gao</option>
+              <option value="1191">Mimic</option>
+              <option value="1614">Mineral</option>
+              <option value="1292">Mini Demon</option>
+              <option value="1149">Minorous</option>
+              <option value="1059">Mistress</option>
+              <option value="1701">Mistress of Shelter</option>
+              <option value="1404">Miyabi Doll</option>
+              <option value="1313">Mobster</option>
+              <option value="1150">Moonlight Flower</option>
+              <option value="1055">Muka</option>
+              <option value="1041">Mummy</option>
+              <option value="1026">Munak</option>
+              <option value="1780">Muscipular</option>
+              <option value="1262">Mutant Dragon</option>
+              <option value="1151">Myst</option>
+              <option value="1249">Myst Case</option>
+              <option value="1203">Mysteltainn</option>
+              <option value="1870">Necromancer</option>
+              <option value="1255">Nereid</option>
+              <option value="1061">Nightmare</option>
+              <option value="1379">Nightmare Terror</option>
+              <option value="1180">Nine Tail</option>
+              <option value="1715">Novus (Red)</option>
+              <option value="1718">Novus (Yellow)</option>
+              <option value="1620">Noxious</option>
+              <option value="1044">Obeaune</option>
+              <option value="1615">Obsidian</option>
+              <option value="1704">Odium of Thanatos</option>
+              <option value="1204">Ogretooth</option>
+              <option value="1189">Orc Archer</option>
+              <option value="1686">Orc Baby</option>
+              <option value="1087">Orc Hero</option>
+              <option value="1273">Orc Lady</option>
+              <option value="1190">Orc Lord</option>
+              <option value="1152">Orc Skeleton</option>
+              <option value="1023">Orc Warrior</option>
+              <option value="1153">Orc Zombie</option>
+              <option value="1038">Osiris</option>
+              <option value="1295">Owl Baron</option>
+              <option value="1320">Owl Duke</option>
+              <option value="1308">Panzer Goblin</option>
+              <option value="1500">Parasite</option>
+              <option value="1154">Pasana</option>
+              <option value="1019">Peco Peco</option>
+              <option value="1047">Peco Peco Egg</option>
+              <option value="1216">Penomena</option>
+              <option value="1314">Permeter</option>
+              <option value="1256">Pest</option>
+              <option value="1155">Petite (Ground)</option>
+              <option value="1156">Petite (Sky)</option>
+              <option value="1157">Pharaoh</option>
+              <option value="1158">Phen</option>
+              <option value="1159">Phreeoni</option>
+              <option value="1049">Picky</option>
+              <option value="1050">Picky (Shell)</option>
+              <option value="1160">Piere</option>
+              <option value="2015">Pinguicula</option>
+              <option value="1071">Pirate Skeleton</option>
+              <option value="1616">Pitman</option>
+              <option value="1161">Plankton</option>
+              <option value="1697">Plasma (Blue)</option>
+              <option value="1695">Plasma (Green)</option>
+              <option value="1696">Plasma (Purple)</option>
+              <option value="1694">Plasma (Red)</option>
+              <option value="1693">Plasma (Yellow)</option>
+              <option value="1077">Poison Spore</option>
+              <option value="1402">Poisonous Toad</option>
+              <option value="1031">Poporing</option>
+              <option value="1619">Porcellio</option>
+              <option value="1002">Poring</option>
+              <option value="1199">Punk</option>
+              <option value="1008">Pupa</option>
+              <option value="1508">Quve</option>
+              <option value="1162">Rafflesia</option>
+              <option value="1865">Ragged Zombie</option>
+              <option value="1254">Raggler</option>
+              <option value="1163">Raydric</option>
+              <option value="1276">Raydric Archer</option>
+              <option value="1682">Remover</option>
+              <option value="1164">Requiem</option>
+              <option value="1195">Rideword</option>
+              <option value="1052">Rocker</option>
+              <option value="1012">Roda Frog</option>
+              <option value="1392">Rotar Zairo</option>
+              <option value="1782">Roween</option>
+              <option value="1623">RSX-0806</option>
+              <option value="1281">Sageworm</option>
+              <option value="1831">Salamander</option>
+              <option value="1492">Samurai Specter</option>
+              <option value="1165">Sandman</option>
+              <option value="1243">Sasquatch</option>
+              <option value="1166">Savage</option>
+              <option value="1167">Savage Babe</option>
+              <option value="1001">Scorpion</option>
+              <option value="1323">Sea Otter</option>
+              <option value="1317">Seal</option>
+              <option value="1774">Seeker</option>
+              <option value="1634">Seyren Windsor</option>
+              <option value="1074">Shellfish</option>
+              <option value="1401">Shinobi</option>
+              <option value="1037">Side Winder</option>
+              <option value="1776">Siroma</option>
+              <option value="1754">Skeggiold (Black)</option>
+              <option value="1755">Skeggiold (Blue)</option>
+              <option value="1196">Skel Prisoner</option>
+              <option value="1169">Skel Worker</option>
+              <option value="1076">Skeleton</option>
+              <option value="1290">Skeleton General</option>
+              <option value="1752">Skogul</option>
+              <option value="1386">Sleeper</option>
+              <option value="1056">Smokie</option>
+              <option value="1650">Sniper Cecil (MVP)</option>
+              <option value="1775">Snowier</option>
+              <option value="1170">Sohee</option>
+              <option value="1028">Soldier Skeleton</option>
+              <option value="1316">Solider</option>
+              <option value="1014">Spore</option>
+              <option value="1322">Spring Rabbit</option>
+              <option value="1174">Stainer</option>
+              <option value="1278">Stalactic Golem</option>
+              <option value="1784">Stapo</option>
+              <option value="1042">Steel Chonchon</option>
+              <option value="1215">Stem Worm</option>
+              <option value="1207">Sting</option>
+              <option value="1495">Stone Shooter</option>
+              <option value="1251">Stormy Knight</option>
+              <option value="1065">Strouf</option>
+              <option value="1370">Succubus</option>
+              <option value="1829">Sword Guardian</option>
+              <option value="1069">Swordfish</option>
+              <option value="1584">Tamruan</option>
+              <option value="1412">Taoist Hermit</option>
+              <option value="1175">Tarou</option>
+              <option value="1622">Teddy Bear</option>
+              <option value="1405">Tengu</option>
+              <option value="1708">Thanatos Phantom</option>
+              <option value="1034">Thara Frog</option>
+              <option value="1375">The Paper</option>
+              <option value="1051">Thief Bug</option>
+              <option value="1048">Thief Bug Egg</option>
+              <option value="1089">Toad</option>
+              <option value="1279">Tri Joint</option>
+              <option value="1312">Turtle General</option>
+              <option value="1618">Ungoliant</option>
+              <option value="1883">Uzhas</option>
+              <option value="1066">Vadon</option>
+              <option value="1092">Vagabond Wolf</option>
+              <option value="1765">Valkyrie</option>
+              <option value="1751">Valkyrie Randgris</option>
+              <option value="1771">Vanberk</option>
+              <option value="1679">Venatu (Blue)</option>
+              <option value="1677">Venatu (Green)</option>
+              <option value="1678">Venatu (Orange)</option>
+              <option value="1676">Venatu (Purple)</option>
+              <option value="1621">Venomous</option>
+              <option value="1032">Verit</option>
+              <option value="1685">Vesper</option>
+              <option value="1390">Violy</option>
+              <option value="1176">Vitata</option>
+              <option value="1088">Vocal</option>
+              <option value="1208">Wanderer</option>
+              <option value="1617">Waste Stove</option>
+              <option value="1179">Whisper</option>
+              <option value="1630">White Lady</option>
+              <option value="1653">Wickebine Tres</option>
+              <option value="1261">Wild Rose</option>
+              <option value="1010">Willow</option>
+              <option value="1263">Wind Ghost</option>
+              <option value="1013">Wolf</option>
+              <option value="1880">Wood Goblin</option>
+              <option value="1497">Wooden Golem</option>
+              <option value="1499">Wootan Fighter</option>
+              <option value="1498">Wootan Shooter</option>
+              <option value="1024">Wormtail</option>
+              <option value="1192">Wraith</option>
+              <option value="1291">Wraith Dead</option>
+              <option value="1512">Yao Jun</option>
+              <option value="1057">Yoyo</option>
+              <option value="1979">Zakudam</option>
+              <option value="1200">Zealotus</option>
+              <option value="1177">Zenorc</option>
+              <option value="1178">Zerom</option>
+              <option value="1514">Zhu Po Long</option>
+              <option value="1417">Zipper Bear</option>
+              <option value="1015">Zombie</option>
+              <option value="1298">Zombie Master</option>
+              <option value="1197">Zombie Prisoner</option>
+              <option value="1864">Zombie Slaughter</option>
+            </select>
+            <table class="information">
+              <tbody>
+                <tr id="target_hp_row" style="display:none">
+                  <td>Hp</td>
+                  <td class="js" id="target_hp"></td>
+                </tr>
+                <tr>
+                  <td>Size</td>
+                  <td class="js" id="target_size">Medium</td>
+                </tr>
+                <tr>
+                  <td>Race</td>
+                  <td class="js" id="target_race">Demi-Human</td>
+                </tr>
+                <tr>
+                  <td>Element</td>
+                  <td class="js" id="target_element">Neutral 1</td>
+                </tr>
+                <tr id="player_def_row">
+                  <td>Def</td>
+                  <td>
+                    <div class="form-inline">
+                      <input type="number" class="form-control js" id="player_soft_def" min="0" max="999" value="100"> +
+                      <input type="number" class="form-control js" id="player_def" min="0" max="999" value="100">
+                    </div>
+                  </td>
+                </tr>
+                <tr id="player_mdef_row">
+                  <td>MDef</td>
+                  <td>
+                    <div class="form-inline">
+                      <input type="number" class="form-control js" id="player_soft_mdef" min="0" max="999" value="40"> +
+                      <input type="number" class="form-control js" id="player_mdef" min="0" max="999" value="20">
+                    </div>
+                  </td>
+                </tr>
+                <tr id="player_vit_row" style="display:none">
+                  <td>Vit</td>
+                  <td>
+                    <div class="form-inline">
+                      <input type="number" class="form-control js" id="player_vit" min="0" max="200" value="100">
+                    </div>
+                  </td>
+                </tr>
+                <tr id="target_def_row" style="display:none">
+                  <td>Def</td>
+                  <td>
+                    <span class="js" id="target_soft_def"></span> + <span class="js" id="target_def"></span>
+                  </td>
+                </tr>
+                <tr id="target_mdef_row" style="display:none">
+                  <td>MDef</td>
+                  <td>
+                    <span class="js" id="target_soft_mdef"></span> + <span class="js" id="target_mdef"></span>
+                  </td>
+                </tr>
+                <tr id="target_hit_row" style="display:none">
+                  <td>100% Hit</td>
+                  <td class="js" id="target_hit"></td>
+                </tr>
+                <tr id="target_flee_row" style="display:none">
+                  <td>95% Flee</td>
+                  <td class="js" id="target_flee"></td>
+                </tr>
+              </tbody>
+            </table>
+            <h4>Effects</h4>
+            <div id="target_effect">
+              <div class="form-line"><label><input type="checkbox" class="js" id="target_effect_frozen"> Frozen</label>
+              </div>
+              <div class="form-line"><label><input type="checkbox" class="js" id="target_effect_stone"> Stone</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="https://stat.prtwiki.in.th/#attack" data-toggle="tab">Attack</a></li>
+        </ul>
+        <br>
+        <div class="tab-content">
+          <div class="tab-pane active" id="attack">
+            <div class="form-inline">
+              <select class="form-control js" id="attack_skill">
+                <option value="all_normal">Normal Attack</option>
+                <option value="all_critical">Critical Attack</option>
+              </select>
+              <select class="form-control js" id="attack_skill_lv">
+                <option>1</option>
+              </select>
+            </div>
+            <table class="information">
+              <tbody>
+                <tr>
+                  <td class="js" id="attack_skill_type">Damage</td>
+                  <td><span class="js" id="dmg">0 ~ 0</span>
+                    <div id="times_row" style="display: none;"><small>(<span class="js" id="times"></span>
+                        Times)</small></div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <span id="player_error_notification" style="display: none">* ดาเมจคลาดเคลื่อนมากเมื่อต่อสู้กับ Player
+              ยังไม่สามารถแก้ไขได้</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="row">
+      <div class="col-xs-6 col-md-push-6 col-md-3">
+        <strong>Sites</strong>
+        <ul>
+          <li><a href="https://www.prtwiki.in.th/">PRT Wiki</a></li>
+          <li><a href="https://revodb.prtwiki.in.th/">Revo DB</a></li>
+          <li><a href="https://skill.prtwiki.in.th/">Skill Simulator</a></li>
+          <li><a href="https://stat.prtwiki.in.th/">Stats Simulator</a></li>
+          <li><a href="https://misc.prtwiki.in.th/">Miscellaneous</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-6 col-md-push-6 col-md-3">
+        <strong>By WhiteBearZ</strong>
+        <ul class="icon-list">
+          <li><i class="icon fab fa-facebook"></i> <a href="https://www.facebook.com/mc.whitebearz/"
+              target="_blank">Facebook</a></li>
+          <li><i class="icon fab fa-twitch"></i> <a href="https://www.twitch.tv/whitebearzbank"
+              target="_blank">Twitch</a></li>
+          <li><i class="icon fab fa-youtube"></i> <a href="https://www.youtube.com/user/WhiteBearZBank/"
+              target="_blank">Youtube</a></li>
+          <li><i class="icon glyphicon glyphicon-heart"></i> <a
+              href="https://www.facebook.com/notes/whitebearz/%E0%B8%8A%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B8%99%E0%B8%B1%E0%B8%9A%E0%B8%AA%E0%B8%99%E0%B8%B8%E0%B8%99-whitebearzbank/1748109208786650/"
+              target="_blank">Donate</a></li>
+          <li><i class="icon glyphicon glyphicon-send"></i> <a href="https://www.facebook.com/mc.whitebearz/inbox/"
+              target="_blank">Report</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-md-pull-6 col-md-6">
+        <div class="md-bottom">Copyright © 2018. prtwiki.in.th All right reserved.</div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-57000853-6', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+
+
+
+</body>
+
+</html>
