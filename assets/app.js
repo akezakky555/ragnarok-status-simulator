@@ -418,6 +418,7 @@ function update_status_information_data() {
   data.matk.add(data.bonus_matk);
   data.matk.addition_rate(data.bonus_matk_mul);
   data.matk.addition_rate(data['bonus_matk_' + data.target.race] || 0);
+  data.matk.addition_rate(data['bonus_matk_' + data.target.element] || 0);
   if (data.attack_skill.type == skill_matk) {
     data.matk.addition_rate(data['bonus_matk_skill_' + data.ele_matk] || 0);
   }
