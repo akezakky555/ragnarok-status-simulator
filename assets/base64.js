@@ -1,0 +1,1 @@
+var Base64={alpha:"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_",encode:function(e){if("number"!=typeof e)throw"Value is not number!";var a,r="";do{a=e%64,r=Base64.alpha.charAt(a)+r,e=Math.floor(e/64)}while(e>0);return r},decode:function(e){for(var a=0,r=0,n=e.length;r<n;r++)a*=64,a+=Base64.alpha.indexOf(e[r]);return a}};
